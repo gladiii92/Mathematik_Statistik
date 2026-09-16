@@ -1,0 +1,65 @@
+/* ============================================================
+   A11y & Basis-Politur für Tastatur, Kontraste & KaTeX
+   ============================================================ */
+
+/* --- Skip-Link zum Hauptinhalt --- */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -120px;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  background: #38bdf8;
+  color: #020617;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.6);
+  transition: top 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 0.75rem;
+  outline: 3px solid #f8fafc;
+  outline-offset: 2px;
+}
+
+/* --- Fokus-Visible Outlines (global, nur Tastatur) --- */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+/* --- WCAG AA Kontrast & Fokus-Verstärkung --- */
+.text-muted-contrast {
+  color: #cbd5e1;
+}
+
+/* --- prefers-reduced-motion: Animationen deaktivieren --- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .skip-link {
+    transition: none !important;
+  }
+  [class*='grid-rows'] {
+    transition: none !important;
+  }
+}
+
+/* --- Keyboard-only Focus Ring verstärken (High Contrast Mode) --- */
+@media (forced-colors: active) {
+  :focus-visible {
+    outline: 3px solid ButtonText !important;
+  }
+}

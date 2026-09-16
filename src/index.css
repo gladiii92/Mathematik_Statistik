@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Schritt 1 — Globales Design-System / Dark-Theme Grundlage
+   Farben: #020617 bg, #0f172a surface, #38bdf8 Akzent
+   Nur visuelle Basis, kein Funktionsumbau
+   ============================================================ */
+:root {
+  --bg-base: #020617;
+  --bg-raised: #0f172a;
+  --bg-card: #1e293b;
+  --bg-overlay: rgba(2, 6, 23, 0.7);
+  --border-subtle: #1e293b;
+  --border-strong: #334155;
+  --text-primary: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-faint: #64748b;
+  --accent-blue: #38bdf8;
+  --accent-violet: #a78bfa;
+  --accent-green: #34d399;
+  --danger: #fca5a5;
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  color-scheme: dark;
+}
+
+html {
+  background-color: var(--bg-base);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100vh;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+}
+
+/* ---------- Typography-Scale ---------- */
+h1, .type-h1 { font-size: 1.875rem; line-height: 2.25rem; font-weight: 700; letter-spacing: -0.025em; color: var(--text-primary); }
+h2, .type-h2 { font-size: 1.5rem; line-height: 2rem; font-weight: 600; letter-spacing: -0.015em; color: var(--text-primary); }
+h3, .type-h3 { font-size: 1.25rem; line-height: 1.75rem; font-weight: 600; color: var(--text-primary); }
+h4, .type-h4 { font-size: 1.125rem; line-height: 1.6rem; font-weight: 600; color: var(--text-primary); }
+p, .type-body { font-size: 1rem; line-height: 1.625; color: var(--text-primary); }
+.type-muted { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+.type-small { font-size: 0.875rem; line-height: 1.5; color: var(--text-muted); }
+.type-caption { font-size: 0.75rem; line-height: 1.4; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-faint); }
+code, kbd, pre, .type-mono { font-family: var(--font-mono); }
+
+/* ---------- Scrollbar (Webkit + Firefox) ---------- */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-raised); }
+::-webkit-scrollbar-thumb { background: var(--bg-card); border-radius: 8px; border: 2px solid var(--bg-raised); }
+::-webkit-scrollbar-thumb:hover { background: var(--border-strong); }
+* { scrollbar-width: thin; scrollbar-color: var(--bg-card) var(--bg-raised); }
+
+::selection { background: rgba(56, 189, 248, 0.35); color: var(--text-primary); }
+
+/* ---------- Fokus-Ringe (a11y) ---------- */
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--accent-blue); outline-offset: 2px; border-radius: 4px; }
+
+/* ---------- App-Shell & Navigation ---------- */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+}
+.app-header {
+  min-height: 56px;
+  background-color: rgba(15, 23, 42, 0.95);
+  border-bottom: 1px solid var(--border-subtle);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+}
+.app-body { display: flex; flex: 1 1 auto; min-height: 0; overflow: hidden; }
+.app-sidebar {
+  width: 320px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border-subtle);
+  background-color: var(--bg-raised);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.app-content { flex: 1 1 auto; min-width: 0; overflow-y: auto; overscroll-behavior: contain; }
+.app-progress { height: 6px; overflow: hidden; border-radius: 9999px; background-color: var(--bg-card); }
+.app-progress > span {
+  display: block; height: 100%; border-radius: 9999px;
+  background: linear-gradient(to right, var(--accent-blue), var(--accent-green));
+  transition: width 0.3s ease;
+}
+.sidebar-overlay { background-color: var(--bg-overlay); backdrop-filter: blur(4px); }
+
+/* ---------- Cards / Content-Komponenten (nur Optik) ---------- */
+.card {
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(30, 41, 59, 0.9);
+  background-color: rgba(15, 23, 42, 0.6);
+  color: var(--text-primary);
+}
+.learning-module-card, .topic-card, .model-solution-card {
+  background-color: var(--bg-raised);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  color: var(--text-primary);
+}
+.formula-list { display: flex; flex-direction: column; gap: 0.75rem; margin: 1rem 0; }
+.graph-container { margin: 1rem 0; background: var(--bg-raised); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1rem; }
+.graph-description { color: var(--text-muted); text-align: center; font-size: 0.875rem; margin-top: 0.5rem; }
+.math-graph-empty { min-height: 320px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); background: var(--bg-raised); border: 1px dashed var(--border-strong); border-radius: var(--radius-md); }
+.quiz-hint, .quiz-solution { background: var(--bg-raised); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 0.75rem 1rem; }
+.formatted-math-text { line-height: 1.625; }
+
+/* ---------- KaTeX-Anpassungen ---------- */
+.math-formula-block {
+  display: block;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  text-align: center;
+}
+.math-formula-block .katex-display { margin: 0; padding: 0.25rem 0; }
+.math-formula-inline { display: inline-block; padding: 0 0.25rem; color: inherit; white-space: nowrap; vertical-align: baseline; }
+.math-formula-inline .katex { font-size: 1.02em; }
+.katex { color: var(--text-primary); text-rendering: optimizeLegibility; }
+.katex .mord, .katex .mbin, .katex .mrel, .katex .mop { color: inherit; }
+.math-formula-error {
+  background: rgb(69 10 10 / 0.6);
+  color: var(--danger);
+  border: 1px solid rgb(185 28 28 / 0.5);
+  border-radius: var(--radius-sm);
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+@media (max-width: 640px) {
+  h1, .type-h1 { font-size: 1.5rem; line-height: 2rem; }
+  h2, .type-h2 { font-size: 1.25rem; line-height: 1.75rem; }
+  .math-formula-block { padding: 0.6rem 0.75rem; font-size: 0.92em; }
+  .app-sidebar { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

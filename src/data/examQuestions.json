@@ -1,0 +1,310 @@
+[
+  {
+    "id": "exam-p0-potenzen-1",
+    "topicId": "p0-potenzen-wurzeln",
+    "title": "Klausuraufgabe 0.1",
+    "question": "Vereinfachen Sie für $x > 0$ den Term $$\\frac{x^3 \\cdot \\sqrt{x^5}}{x^{-2}}$$ zu einer einzigen Potenz $x^{n}$.",
+    "hints": [
+      "Schreiben Sie die Wurzel als Potenz: $\\sqrt{x^5} = x^{5/2}$.",
+      "Fassen Sie den Zähler mit $x^3 \\cdot x^{5/2} = x^{3+5/2} = x^{11/2}$ zusammen.",
+      "Bringen Sie den Nenner in den Zähler: $\\frac{x^{11/2}}{x^{-2}} = x^{11/2 - (-2)} = x^{15/2}$."
+    ],
+    "solution": "Schritt 1: Wurzel in Potenzschreibweise umformen:\n$$\\sqrt{x^5} = x^{5/2}$$\n\nSchritt 2: Zähler mit den Potenzgesetzen zusammenfassen:\n$$x^3 \\cdot x^{5/2} = x^{3 + 2{,}5} = x^{11/2}$$\n\nSchritt 3: Division durch Subtraktion der Exponenten:\n$$\\frac{x^{11/2}}{x^{-2}} = x^{11/2 - (-2)} = x^{11/2 + 4/2} = x^{15/2}$$\n\nErgebnis: $x^{15/2}$ bzw. $x^{7{,}5}$.",
+    "solutionFormula": "\\frac{x^3 \\cdot \\sqrt{x^5}}{x^{-2}} = x^{15/2}",
+    "points": 5
+  },
+  {
+    "id": "exam-p0-potenzen-2",
+    "topicId": "p0-potenzen-wurzeln",
+    "title": "Klausuraufgabe 0.2",
+    "question": "Vereinfachen Sie für $a > 0$ den Term $$\\frac{(a^4 \\cdot a^{-2})^3}{a^3}$$ vollständig.",
+    "hints": [
+      "Fassen Sie zuerst die Basis in der Klammer zusammen: $a^4 \\cdot a^{-2} = a^{4-2} = a^2$.",
+      "Wenden Sie das Potenzgesetz $(a^r)^s = a^{r \\cdot s}$ auf $(a^2)^3$ an.",
+      "Dividieren Sie durch $a^3$ mittels Subtraktion der Exponenten: $\\frac{a^6}{a^3} = a^{6-3}$."
+    ],
+    "solution": "Schritt 1: Klammerausdruck vereinfachen:\n$$a^4 \\cdot a^{-2} = a^{4-2} = a^2$$\n\nSchritt 2: Potenzieren einer Potenz:\n$$(a^2)^3 = a^{2 \\cdot 3} = a^6$$\n\nSchritt 3: Bruch kürzen bzw. Exponenten subtrahieren:\n$$\\frac{a^6}{a^3} = a^{6-3} = a^3$$\n\nErgebnis: $a^3$.",
+    "solutionFormula": "\\frac{(a^4 \\cdot a^{-2})^3}{a^3} = a^3",
+    "points": 5
+  },
+  {
+    "id": "exam-p0-quadratische-1",
+    "topicId": "p0-quadratische-glg",
+    "title": "Klausuraufgabe 0.3",
+    "question": "Bestimmen Sie alle reellen Lösungen der quadratischen Gleichung $$2x^2 - 8x - 10 = 0$$ mithilfe der $p$-$q$-Formel.",
+    "hints": [
+      "Dividieren Sie die gesamte Gleichung durch $2$, um die Normalform $x^2 + px + q = 0$ zu erhalten.",
+      "Lesen Sie die Koeffizienten $p = -4$ und $q = -5$ ab.",
+      "Setzen Sie in die $p$-$q$-Formel $x_{1,2} = -\\frac{p}{2} \\pm \\sqrt{\\left(\\frac{p}{2}\\right)^2 - q}$ ein."
+    ],
+    "solution": "Schritt 1: Division durch den Leitkoeffizienten $2$ zur Normalform:\n$$x^2 - 4x - 5 = 0$$\nKoeffizienten: $p = -4$, $q = -5$.\n\nSchritt 2: Einsetzen in die $p$-$q$-Formel:\n$$x_{1,2} = -\\frac{-4}{2} \\pm \\sqrt{\\left(\\frac{-4}{2}\\right)^2 - (-5)} = 2 \\pm \\sqrt{4 + 5} = 2 \\pm \\sqrt{9} = 2 \\pm 3$$\n\nSchritt 3: Lösungsmenge bestimmen:\n$$x_1 = 2 + 3 = 5, \\quad x_2 = 2 - 3 = -1$$\n\nLösungsmenge: $L = \\{-1; 5\\}$.",
+    "solutionFormula": "x_{1,2} = -\\frac{p}{2} \\pm \\sqrt{\\left(\\frac{p}{2}\\right)^2 - q} \\implies x_1 = 5, \\; x_2 = -1",
+    "points": 5
+  },
+  {
+    "id": "exam-p0-quadratische-2",
+    "topicId": "p0-quadratische-glg",
+    "title": "Klausuraufgabe 0.4",
+    "question": "Bestimmen Sie die Lösungsmenge von $$3x^2 + 18x + 27 = 0$$ und bestimmen Sie den Wert der Diskriminante $D$.",
+    "hints": [
+      "Dividieren Sie durch $3$: $x^2 + 6x + 9 = 0$.",
+      "Berechnen Sie die Diskriminante $D = \\left(\\frac{p}{2}\\right)^2 - q$ mit $p=6$ und $q=9$.",
+      "Bei $D=0$ existiert genau eine reelle (doppelte) Nullstelle: $x = -p/2$."
+    ],
+    "solution": "Schritt 1: Normalform herstellen (Division durch $3$):\n$$x^2 + 6x + 9 = 0$$\nKoeffizienten: $p = 6$, $q = 9$.\n\nSchritt 2: Diskriminante berechnen:\n$$D = \\left(\\frac{p}{2}\\right)^2 - q = \\left(\\frac{6}{2}\\right)^2 - 9 = 3^2 - 9 = 0$$\n\nSchritt 3: Nullstelle berechnen:\n$$x_{1,2} = -\\frac{6}{2} \\pm \\sqrt{0} = -3$$\n\nErgebnis: Es liegt eine doppelte reelle Nullstelle bei $x = -3$ vor. Lösungsmenge $L = \\{-3\\}$.",
+    "solutionFormula": "D = \\left(\\frac{p}{2}\\right)^2 - q = 0 \\implies x = -3",
+    "points": 5
+  },
+  {
+    "id": "exam-p1-ableitung-1",
+    "topicId": "p1-oekonomische-anwendung",
+    "title": "Klausuraufgabe 1.1",
+    "question": "Ein Monopolist hat die Preis-Absatz-Funktion $p(x) = 100 - 2x$ und die Gesamtkostenfunktion $K(x) = 20x + 300$. Bestimmen Sie die gewinnmaximale Produktionsmenge $x^*$, den optimalen Verkaufspreis $p^*$ und den maximalen Gewinn $G_{max}$.",
+    "hints": [
+      "Stellen Sie die Erlösfunktion $E(x) = p(x) \\cdot x = (100 - 2x)x = 100x - 2x^2$ auf.",
+      "Bilden Sie die Gewinnfunktion $G(x) = E(x) - K(x) = -2x^2 + 80x - 300$.",
+      "Setzen Sie die erste Ableitung null ($G'(x) = -4x + 80 = 0$) und prüfen Sie $G''(x) < 0$."
+    ],
+    "solution": "Schritt 1: Erlösfunktion aufstellen:\n$$E(x) = p(x) \\cdot x = (100 - 2x) \\cdot x = 100x - 2x^2$$\n\nSchritt 2: Gewinnfunktion aufstellen:\n$$G(x) = E(x) - K(x) = (100x - 2x^2) - (20x + 300) = -2x^2 + 80x - 300$$\n\nSchritt 3: Notwendige Bedingung für das Gewinnmaximum ($G'(x) = 0$):\n$$G'(x) = -4x + 80 = 0 \\implies 4x = 80 \\implies x^* = 20$$\n\nSchritt 4: Hinreichende Bedingung prüfen:\n$$G''(x) = -4 < 0 \\quad (\\text{echtes lokales Maximum})$$\n\nSchritt 5: Optimaler Preis und maximaler Gewinn:\n$$p^* = p(20) = 100 - 2 \\cdot 20 = 60$$\n$$G_{max} = G(20) = -2 \\cdot (20)^2 + 80 \\cdot 20 - 300 = -800 + 1600 - 300 = 500$$\n\nErgebnis: $x^* = 20$ ME, $p^* = 60$ GE/ME, $G_{max} = 500$ GE.",
+    "solutionFormula": "G'(x^*) = 0 \\implies x^* = 20, \\; p^* = 60, \\; G_{max} = 500",
+    "points": 8
+  },
+  {
+    "id": "exam-p1-ableitung-2",
+    "topicId": "p1-ableitungsregeln",
+    "title": "Klausuraufgabe 1.2",
+    "question": "Leiten Sie die Funktion $f(x) = (x^2 + 1) \\cdot (3x - 2)$ mithilfe der Produktregel ab. Bestimmen Sie die erste Ableitung $f'(x)$ und die zweite Ableitung $f''(x)$ in vereinfachter Polynomform.",
+    "hints": [
+      "Setzen Sie $u(x) = x^2 + 1 \\implies u'(x) = 2x$ und $v(x) = 3x - 2 \\implies v'(x) = 3$.",
+      "Wenden Sie die Produktregel $(u \\cdot v)' = u'v + uv'$ an.",
+      "Multiplizieren Sie die Terme aus und leiten Sie $f'(x)$ für $f''(x)$ nochmals ab."
+    ],
+    "solution": "Schritt 1: Faktoren und Teilableitungen bestimmen:\n$$u(x) = x^2 + 1 \\implies u'(x) = 2x$$\n$$v(x) = 3x - 2 \\implies v'(x) = 3$$\n\nSchritt 2: Produktregel anwenden:\n$$f'(x) = u'(x) \\cdot v(x) + u(x) \\cdot v'(x) = 2x \\cdot (3x - 2) + (x^2 + 1) \\cdot 3$$\n\nSchritt 3: Ausmultiplizieren und zusammenfassen:\n$$f'(x) = 6x^2 - 4x + 3x^2 + 3 = 9x^2 - 4x + 3$$\n\nSchritt 4: Zweite Ableitung berechnen:\n$$f''(x) = \\frac{d}{dx}(9x^2 - 4x + 3) = 18x - 4$$\n\nErgebnis: $f'(x) = 9x^2 - 4x + 3$, $f''(x) = 18x - 4$.",
+    "solutionFormula": "f'(x) = 9x^2 - 4x + 3, \\quad f''(x) = 18x - 4",
+    "points": 6
+  },
+  {
+    "id": "exam-p1-integral-1",
+    "topicId": "p1-integralrechnung",
+    "title": "Klausuraufgabe 1.3",
+    "question": "Berechnen Sie das bestimmte Integral $$\\int_0^2 (3x^2 - 4x + 1) \\, dx$$ durch Bestimmung einer Stammfunktion.",
+    "hints": [
+      "Bestimmen Sie die Stammfunktion $F(x) = \\int (3x^2 - 4x + 1) \\, dx = x^3 - 2x^2 + x$.",
+      "Wenden Sie den Hauptsatz der Differential- und Integralrechnung an: $[F(x)]_0^2 = F(2) - F(0)$.",
+      "Berechnen Sie $F(2) = 2^3 - 2(2^2) + 2$ und $F(0) = 0$."
+    ],
+    "solution": "Schritt 1: Stammfunktion $F(x)$ ermitteln:\n$$F(x) = \\frac{3}{3}x^3 - \\frac{4}{2}x^2 + x = x^3 - 2x^2 + x$$\n\nSchritt 2: Hauptsatz anwenden:\n$$\\int_0^2 (3x^2 - 4x + 1) \\, dx = \\left[x^3 - 2x^2 + x\\right]_0^2 = F(2) - F(0)$$\n\nSchritt 3: Grenzen einsetzen:\n$$F(2) = 2^3 - 2 \\cdot 2^2 + 2 = 8 - 8 + 2 = 2$$\n$$F(0) = 0$$\n$$\\int_0^2 (3x^2 - 4x + 1) \\, dx = 2 - 0 = 2$$\n\nErgebnis: Das bestimmte Integral hat den Wert $2$.",
+    "solutionFormula": "\\int_0^2 (3x^2 - 4x + 1) \\, dx = \\left[x^3 - 2x^2 + x\\right]_0^2 = 2",
+    "points": 6
+  },
+  {
+    "id": "exam-p1-integral-2",
+    "topicId": "p1-integralrechnung",
+    "title": "Klausuraufgabe 1.4",
+    "question": "Berechnen Sie das bestimmte Integral $$\\int_0^1 x \\cdot e^x \\, dx$$ mittels partieller Integration.",
+    "hints": [
+      "Wählen Sie $u(x) = x \\implies u'(x) = 1$ und $v'(x) = e^x \\implies v(x) = e^x$.",
+      "Partielle Integration: $\\int u v' \\, dx = u v - \\int u' v \\, dx$.",
+      "Stammfunktion: $[(x-1)e^x]_0^1$ mit $(1-1)e^1 - (0-1)e^0 = 0 - (-1) = 1$."
+    ],
+    "solution": "Schritt 1: Faktoren festlegen:\n$$u(x) = x \\implies u'(x) = 1$$\n$$v'(x) = e^x \\implies v(x) = e^x$$\n\nSchritt 2: Formel der partiellen Integration anwenden:\n$$\\int x e^x \\, dx = x e^x - \\int 1 \\cdot e^x \\, dx = x e^x - e^x = (x-1)e^x$$\n\nSchritt 3: Bestimmtes Integral auswerten:\n$$\\int_0^1 x e^x \\, dx = \\left[(x-1)e^x\\right]_0^1 = (1-1)e^1 - (0-1)e^0 = 0 - (-1 \\cdot 1) = 1$$\n\nErgebnis: Das Integral beträgt genau $1$.",
+    "solutionFormula": "\\int_0^1 x e^x \\, dx = \\left[(x-1)e^x\\right]_0^1 = 1",
+    "points": 6
+  },
+  {
+    "id": "exam-p2-zins-1",
+    "topicId": "p2-zinseszins",
+    "title": "Klausuraufgabe 2.1",
+    "question": "Ein Anfangskapital von $K_0 = 10000\\text{ EUR}$ wird über $n = 10\\text{ Jahre}$ zu einem Zinssatz von $i = 5\\%\\text{ p.a.}$ mit jährlicher Zinseszinsrechnung angelegt. Berechnen Sie das Endkapital $K_{10}$.",
+    "hints": [
+      "Verwenden Sie die Zinseszinsformel $K_n = K_0 \\cdot (1+i)^n$.",
+      "Mit $i = 0{,}05$ lautet der Aufzinsungsfaktor $q = 1 + 0{,}05 = 1{,}05$.",
+      "Berechnen Sie $1{,}05^{10} \\approx 1{,}6288946$ und multiplizieren Sie mit $10000$."
+    ],
+    "solution": "Schritt 1: Zinseszinsformel ansetzen:\n$$K_n = K_0 \\cdot (1+i)^n$$\nmit $K_0 = 10000$, $i = 0{,}05$, $n = 10$.\n\nSchritt 2: Aufzinsungsfaktor berechnen:\n$$q^{10} = (1{,}05)^{10} \\approx 1{,}62889463$$\n\nSchritt 3: Endkapital ermitteln:\n$$K_{10} = 10000 \\cdot 1{,}62889463 = 16288{,}95\\text{ EUR}$$\n\nErgebnis: Das Kapital wächst auf ca. $16288{,}95\\text{ EUR}$ an.",
+    "solutionFormula": "K_{10} = K_0 \\cdot (1+i)^{10} = 10000 \\cdot 1{,}05^{10} \\approx 16288{,}95",
+    "points": 5
+  },
+  {
+    "id": "exam-p2-zins-2",
+    "topicId": "p2-zinseszins",
+    "title": "Klausuraufgabe 2.2",
+    "question": "Ein Kapital von $K_0 = 5000\\text{ EUR}$ wird für $t = 3\\text{ Jahre}$ zu einem nominalen Jahreszinssatz von $i_{nom} = 6\\%$ angelegt. Die Verzinsung erfolgt vierteljährlich ($m = 4$). Berechnen Sie den effektiven Jahreszinssatz $i_{eff}$ und das Endkapital $K_3$.",
+    "hints": [
+      "Der relative Periodenzinssatz beträgt $i_{rel} = \\frac{i_{nom}}{m} = \\frac{0{,}06}{4} = 0{,}015$ (1,5 % pro Quartal).",
+      "Der effektive Jahreszins ist $i_{eff} = \\left(1 + \\frac{i_{nom}}{m}\\right)^m - 1 = (1{,}015)^4 - 1$.",
+      "Das Endkapital nach $m \\cdot t = 12$ Quartalen ist $K_3 = K_0 \\cdot (1 + 0{,}015)^{12}$."
+    ],
+    "solution": "Schritt 1: Effektiven Jahreszins $i_{eff}$ berechnen:\n$$i_{eff} = \\left(1 + \\frac{i_{nom}}{m}\\right)^m - 1 = (1 + 0{,}015)^4 - 1 = 1{,}06136355 - 1 \\approx 6{,}1364\\%$$\n\nSchritt 2: Anzahl der Zinsperioden:\n$$N = m \\cdot t = 4 \\cdot 3 = 12\\text{ Quartale}$$\n\nSchritt 3: Endkapital berechnen:\n$$K_3 = K_0 \\cdot \\left(1 + \\frac{i_{nom}}{m}\\right)^{m \\cdot t} = 5000 \\cdot (1{,}015)^{12} = 5000 \\cdot 1{,}19561817 \\approx 5978{,}09\\text{ EUR}$$\n\nErgebnis: $i_{eff} \\approx 6{,}14\\%$, $K_3 \\approx 5978{,}09\\text{ EUR}$.",
+    "solutionFormula": "i_{eff} = \\left(1 + \\frac{i_{nom}}{m}\\right)^m - 1 \\approx 6{,}14\\%, \\quad K_3 = 5000 \\cdot (1{,}015)^{12} \\approx 5978{,}09",
+    "points": 6
+  },
+  {
+    "id": "exam-p2-rente-1",
+    "topicId": "p2-renten-annuitaeten",
+    "title": "Klausuraufgabe 2.3",
+    "question": "Ein Unternehmen möchte eine ewige nachschüssige Rente in Höhe von $R = 12000\\text{ EUR}$ pro Jahr auszahlen. Der Kalkulationszins beträgt $i = 4\\%\\text{ p.a.}$ Welches Barvermögen $C_0$ muss heute bereitgestellt werden? Wie hoch ist alternativ die jährliche Annuität $A$ zur Tilgung eines Kredits über $K_0 = 100000\\text{ EUR}$ bei $i = 5\\%$ über eine Laufzeit von $n = 5\\text{ Jahren}$?",
+    "hints": [
+      "Barwert einer ewigen Rente: $C_0 = \\frac{R}{i}$ mit $i = 0{,}04$.",
+      "Annuität eines Kredits: $A = K_0 \\cdot \\frac{i}{1 - (1+i)^{-n}}$.",
+      "Mit $i = 0{,}05$ und $n = 5$ ist $(1{,}05)^{-5} \\approx 0{,}783526$ und der Annuitätenfaktor $\\approx 0{,}230975$."
+    ],
+    "solution": "Schritt 1: Barwert der ewigen Rente:\n$$C_0 = \\frac{R}{i} = \\frac{12000}{0{,}04} = 300000\\text{ EUR}$$\n\nSchritt 2: Annuitätenfaktor für $i = 5\\%$ und $n = 5$ Jahre:\n$$ANF = \\frac{i}{1 - (1+i)^{-n}} = \\frac{0{,}05}{1 - (1{,}05)^{-5}} = \\frac{0{,}05}{1 - 0{,}783526} = \\frac{0{,}05}{0{,}216474} \\approx 0{,}2309748$$\n\nSchritt 3: Jährliche Annuität berechnen:\n$$A = K_0 \\cdot ANF = 100000 \\cdot 0{,}2309748 \\approx 23097{,}48\\text{ EUR}$$\n\nErgebnis: Ewige Rente benötigt $300000\\text{ EUR}$; jährliche Annuität beträgt ca. $23097{,}48\\text{ EUR}$.",
+    "solutionFormula": "C_0 = \\frac{R}{i} = 300000, \\quad A = K_0 \\cdot \\frac{i}{1-(1+i)^{-n}} \\approx 23097{,}48",
+    "points": 8
+  },
+  {
+    "id": "exam-p2-rente-2",
+    "topicId": "p2-renten-annuitaeten",
+    "title": "Klausuraufgabe 2.4",
+    "question": "Berechnen Sie den Rentenendwert $C_n$ einer $n = 10\\text{-jährigen}$ nachschüssigen Jahresrente von $R = 2000\\text{ EUR}$ bei einem Zinssatz von $i = 3\\%\\text{ p.a.}$",
+    "hints": [
+      "Verwenden Sie die Rentenendwertformel: $C_n = R \\cdot \\frac{(1+i)^n - 1}{i}$.",
+      "Setzen Sie $i = 0{,}03$ und $n = 10$ ein: $(1{,}03)^{10} \\approx 1{,}343916$.",
+      "Rentenendwertfaktor $REF = \\frac{1{,}343916 - 1}{0{,}03} = \\frac{0{,}343916}{0{,}03} \\approx 11{,}463879$."
+    ],
+    "solution": "Schritt 1: Rentenendwertformel ansetzen:\n$$C_n = R \\cdot \\frac{(1+i)^n - 1}{i}$$\nmit $R = 2000$, $i = 0{,}03$, $n = 10$.\n\nSchritt 2: Rentenendwertfaktor ($REF$) ermitteln:\n$$REF = \\frac{(1{,}03)^{10} - 1}{0{,}03} = \\frac{1{,}34391638 - 1}{0{,}03} = \\frac{0{,}34391638}{0{,}03} \\approx 11{,}4638793$$\n\nSchritt 3: Rentenendwert berechnen:\n$$C_{10} = 2000 \\cdot 11{,}4638793 = 22927{,}76\\text{ EUR}$$\n\nErgebnis: Der Rentenendwert nach 10 Jahren beträgt ca. $22927{,}76\\text{ EUR}$.",
+    "solutionFormula": "C_n = R \\cdot \\frac{(1+i)^n - 1}{i} \\implies C_{10} = 2000 \\cdot \\frac{1{,}03^{10}-1}{0{,}03} \\approx 22927{,}76",
+    "points": 6
+  },
+  {
+    "id": "exam-p2-kapitalwert-1",
+    "topicId": "p2-kapitalwert",
+    "title": "Klausuraufgabe 2.5",
+    "question": "Ein Investitionsprojekt erfordert eine Anschaffungsauszahlung von $I_0 = 100000\\text{ EUR}$ im Zeitpunkt $t=0$ und generiert über $n = 5\\text{ Jahre}$ jeweils konstante jährliche Rückflüsse von $CF_t = 30000\\text{ EUR}$ (nachschüssig für $t=1,\\dots,5$). Der Kalkulationszinssatz beträgt $i = 5\\%\\text{ p.a.}$ Berechnen Sie den Kapitalwert $KW$ (Net Present Value) und beurteilen Sie die Vorteilhaftigkeit der Investition.",
+    "hints": [
+      "Kapitalwertformel bei konstanten Cashflows: $KW = -I_0 + CF \\cdot \\frac{1 - (1+i)^{-n}}{i}$.",
+      "Der Rentenbarwertfaktor $RBF(5\\%, 5) = \\frac{1 - (1{,}05)^{-5}}{0{,}05} \\approx 4{,}329477$.",
+      "Ist $KW > 0$, ist die Investition vorteilhaft."
+    ],
+    "solution": "Schritt 1: Rentenbarwertfaktor ($RBF$) bestimmen:\n$$RBF(5\\%, 5) = \\frac{1 - (1{,}05)^{-5}}{0{,}05} = \\frac{1 - 0{,}78352617}{0{,}05} = \\frac{0{,}21647383}{0{,}05} \\approx 4{,}3294766$$\n\nSchritt 2: Barwert der Cashflow-Reihe berechnen:\n$$BW(CF) = 30000 \\cdot 4{,}3294766 = 129884{,}30\\text{ EUR}$$\n\nSchritt 3: Kapitalwert $KW$ berechnen:\n$$KW = -I_0 + BW(CF) = -100000 + 129884{,}30 = +29884{,}30\\text{ EUR}$$\n\nSchritt 4: Entscheidung treffen:\nDa $KW = 29884{,}30\\text{ EUR} > 0$, erwirtschaftet das Projekt einen Vermögenszuwachs über die Mindestverzinsung von $5\\%$ hinaus und ist absolut vorteilhaft.",
+    "solutionFormula": "KW = -I_0 + CF \\cdot \\frac{1-(1+i)^{-n}}{i} = -100000 + 30000 \\cdot 4{,}329477 = 29884{,}30 > 0",
+    "points": 7
+  },
+  {
+    "id": "exam-p2-kapitalwert-2",
+    "topicId": "p2-kapitalwert",
+    "title": "Klausuraufgabe 2.6",
+    "question": "Ein Projekt weist folgende Zahlungsreihe auf: $t=0$: $-50000\\text{ EUR}$, $t=1$: $20000\\text{ EUR}$, $t=2$: $20000\\text{ EUR}$, $t=3$: $20000\\text{ EUR}$. Der Kalkulationszins beträgt $i = 6\\%\\text{ p.a.}$ Berechnen Sie den exakten Kapitalwert $KW$ durch schrittweise Diskontierung aller Einzelzahlungen.",
+    "hints": [
+      "Diskontieren Sie jede Zahlung mit dem Abzinsungsfaktor $(1+i)^{-t} = (1{,}06)^{-t}$.",
+      "Abzinsungsfaktoren: $1{,}06^{-1} \\approx 0{,}943396$, $1{,}06^{-2} \\approx 0{,}889996$, $1{,}06^{-3} \\approx 0{,}839619$.",
+      "Addieren Sie die Barwerte und subtrahieren Sie $50000$."
+    ],
+    "solution": "Schritt 1: Barwerte der einzelnen Perioden-Cashflows berechnen:\n- $t=1$: $\\frac{20000}{1{,}06^1} = 20000 \\cdot 0{,}9433962 = 18867{,}92\\text{ EUR}$\n- $t=2$: $\\frac{20000}{1{,}06^2} = 20000 \\cdot 0{,}8899964 = 17799{,}93\\text{ EUR}$\n- $t=3$: $\\frac{20000}{1{,}06^3} = 20000 \\cdot 0{,}8396193 = 16792{,}39\\text{ EUR}$\n\nSchritt 2: Summe der Barwerte bilden:\n$$BW_{gesamt} = 18867{,}92 + 17799{,}93 + 16792{,}39 = 53460{,}24\\text{ EUR}$$\n\nSchritt 3: Kapitalwert ermitteln:\n$$KW = -50000 + 53460{,}24 = +3460{,}24\\text{ EUR}$$\n\nErgebnis: $KW = 3460{,}24\\text{ EUR} > 0$, die Investition ist vorteilhaft.",
+    "solutionFormula": "KW = -50000 + \\sum_{t=1}^{3} \\frac{20000}{(1{,}06)^t} = 3460{,}24",
+    "points": 6
+  },
+  {
+    "id": "exam-p3-statistik-1",
+    "topicId": "p5-deskriptive-statistik",
+    "title": "Klausuraufgabe 3.1",
+    "question": "Gegeben ist die folgende geordnete Stichproben-Urliste mit $n = 8$ Werten:\n$$2, \\quad 4, \\quad 4, \\quad 4, \\quad 5, \\quad 5, \\quad 7, \\quad 9$$\\nBerechnen Sie das arithmetische Mittel $\\bar{x}$, die empirische Varianz der Grundgesamtheit $\\sigma^2$ (mit Divisor $n$), die korrigierte Stichprobenvarianz $s^2$ (mit Divisor $n-1$) sowie die Standardabweichung $\\sigma$.",
+    "hints": [
+      "Berechnen Sie das arithmetische Mittel $\\bar{x} = \\frac{1}{n}\\sum_{i=1}^n x_i$ mit Summe $= 40$ und $n = 8$.",
+      "Berechnen Sie die Summe der quadrierten Abweichungen $\\sum (x_i - \\bar{x})^2$.",
+      "Teilen Sie durch $n=8$ für $\\sigma^2$ und durch $n-1=7$ für die korrigierte Stichprobenvarianz $s^2$."
+    ],
+    "solution": "Schritt 1: Arithmetisches Mittel berechnen:\n$$\\bar{x} = \\frac{1}{8}(2 + 4 + 4 + 4 + 5 + 5 + 7 + 9) = \\frac{40}{8} = 5$$\n\nSchritt 2: Quadrierte Abweichungen $(x_i - \\bar{x})^2$ ermitteln:\n- $(2-5)^2 = (-3)^2 = 9$\n- $(4-5)^2 = (-1)^2 = 1$ (dreimal $\\implies 3 \\cdot 1 = 3$)\n- $(5-5)^2 = 0^2 = 0$ (zweimal $\\implies 0$)\n- $(7-5)^2 = 2^2 = 4$\n- $(9-5)^2 = 4^2 = 16$\n$$\\sum_{i=1}^8 (x_i - \\bar{x})^2 = 9 + 3 + 0 + 4 + 16 = 32$$\n\nSchritt 3: Varianzen und Standardabweichung berechnen:\n- Populationsvarianz: $$\\sigma^2 = \\frac{32}{8} = 4$$\n- Standardabweichung: $$\\sigma = \\sqrt{4} = 2$$\n- Korrigierte Stichprobenvarianz: $$s^2 = \\frac{32}{8-1} = \\frac{32}{7} \\approx 4{,}5714$$\n\nErgebnis: $\\bar{x} = 5$, $\\sigma^2 = 4$, $\\sigma = 2$, $s^2 \\approx 4{,}57$.",
+    "solutionFormula": "\\bar{x} = \\frac{1}{n}\\sum_{i=1}^n x_i = 5, \\quad \\sigma^2 = \\frac{1}{n}\\sum_{i=1}^n (x_i-\\bar{x})^2 = 4, \\quad \\sigma = 2",
+    "points": 6
+  },
+  {
+    "id": "exam-p3-statistik-2",
+    "topicId": "p5-deskriptive-statistik",
+    "title": "Klausuraufgabe 3.2",
+    "question": "Eine faire Münze ($p = 0{,}5$) wird $n = 4$ Mal unabhängig geworfen. Sei $X$ die Zufallsvariable für die Anzahl 'Kopf'. Bestimmen Sie die Wahrscheinlichkeitsverteilung $P(X=k)$, den Erwartungswert $E(X)$ und die Varianz $Var(X)$.",
+    "hints": [
+      "Da es sich um ein Bernoulli-Experiment handelt, gilt $X \\sim \\text{Bin}(n=4, p=0{,}5)$.",
+      "Verwenden Sie die Binomialformel $P(X=k) = \\binom{n}{k} p^k (1-p)^{n-k}$.",
+      "Erwartungswert $E(X) = n \\cdot p$, Varianz $Var(X) = n \\cdot p \\cdot (1-p)$."
+    ],
+    "solution": "Schritt 1: Wahrscheinlichkeitsverteilung mit $P(X=k) = \\binom{4}{k} \\cdot (0{,}5)^4 = \\frac{\\binom{4}{k}}{16}$ aufstellen:\n- $P(X=0) = \\frac{1}{16} = 0{,}0625$\n- $P(X=1) = \\frac{4}{16} = 0{,}25$\n- $P(X=2) = \\frac{6}{16} = 0{,}375$\n- $P(X=3) = \\frac{4}{16} = 0{,}25$\n- $P(X=4) = \\frac{1}{16} = 0{,}0625$\nSumme der Wahrscheinlichkeiten $= 1$.\n\nSchritt 2: Erwartungswert berechnen:\n$$E(X) = n \\cdot p = 4 \\cdot 0{,}5 = 2$$\n\nSchritt 3: Varianz und Standardabweichung berechnen:\n$$Var(X) = n \\cdot p \\cdot (1-p) = 4 \\cdot 0{,}5 \\cdot 0{,}5 = 1$$\n$$\\sigma_X = \\sqrt{1} = 1$$\n\nErgebnis: $E(X) = 2$, $Var(X) = 1$.",
+    "solutionFormula": "E(X) = n \\cdot p = 2, \\quad Var(X) = n \\cdot p \\cdot (1-p) = 1",
+    "points": 6
+  },
+  {
+    "id": "exam-p3-regression-1",
+    "topicId": "p5-regression-korrelation",
+    "title": "Klausuraufgabe 3.3",
+    "question": "Für eine Stichprobe von $n = 4$ Unternehmen liegen Daten zu Werbeausgaben $x$ (in Tsd. EUR) und Umsatz $y$ (in Tsd. EUR) vor:\n$$(x_1,y_1)=(1,2), \\quad (x_2,y_2)=(2,3), \\quad (x_3,y_3)=(3,5), \\quad (x_4,y_4)=(4,6)$$\\nBestimmen Sie die Parameter $a$ (Achsenabschnitt) und $b$ (Steigung) der linearen Regressionsgeraden $\\hat{y} = a + b x$ nach der Methode der kleinsten Quadrate (OLS).",
+    "hints": [
+      "Berechnen Sie die Mittelwerte $\\bar{x} = \\frac{1+2+3+4}{4} = 2{,}5$ und $\\bar{y} = \\frac{2+3+5+6}{4} = 4{,}0$.",
+      "Berechnen Sie die Summen $SS_{xx} = \\sum (x_i - \\bar{x})^2 = 5{,}0$ und $SP_{xy} = \\sum (x_i - \\bar{x})(y_i - \\bar{y}) = 7{,}0$.",
+      "Die Steigung ist $b = \\frac{SP_{xy}}{SS_{xx}} = \\frac{7{,}0}{5{,}0} = 1{,}4$ und der Achsenabschnitt $a = \\bar{y} - b \\bar{x} = 4{,}0 - 1{,}4 \\cdot 2{,}5 = 0{,}5$."
+    ],
+    "solution": "Schritt 1: Mittelwerte berechnen:\n$$\\bar{x} = \\frac{1 + 2 + 3 + 4}{4} = 2{,}5$$\n$$\\bar{y} = \\frac{2 + 3 + 5 + 6}{4} = 4{,}0$$\n\nSchritt 2: Summe der Abweichungsquadrate und Kreuzprodukte ermitteln:\n- $SS_{xx} = (1-2{,}5)^2 + (2-2{,}5)^2 + (3-2{,}5)^2 + (4-2{,}5)^2 = 2{,}25 + 0{,}25 + 0{,}25 + 2{,}25 = 5{,}0$\n- $SP_{xy} = (-1{,}5)(-2) + (-0{,}5)(-1) + (0{,}5)(1) + (1{,}5)(2) = 3{,}0 + 0{,}5 + 0{,}5 + 3{,}0 = 7{,}0$\n\nSchritt 3: Steigung $b$ berechnen:\n$$b = \\frac{SP_{xy}}{SS_{xx}} = \\frac{7{,}0}{5{,}0} = 1{,}4$$\n\nSchritt 4: Achsenabschnitt $a$ berechnen:\n$$a = \\bar{y} - b \\cdot \\bar{x} = 4{,}0 - 1{,}4 \\cdot 2{,}5 = 4{,}0 - 3{,}5 = 0{,}5$$\n\nErgebnis: Die Regressionsgerade lautet $\\hat{y} = 0{,}5 + 1{,}4x$.",
+    "solutionFormula": "\\hat{y} = a + bx = 0{,}5 + 1{,}4x, \\quad b = \\frac{SP_{xy}}{SS_{xx}} = 1{,}4, \\quad a = 0{,}5",
+    "points": 8
+  },
+  {
+    "id": "exam-p3-regression-2",
+    "topicId": "p5-regression-korrelation",
+    "title": "Klausuraufgabe 3.4",
+    "question": "Berechnen Sie für denselben Datensatz mit $(x_i, y_i) \\in \\{(1,2), (2,3), (3,5), (4,6)\\}$ den empirischen Korrelationskoeffizienten nach Bravais-Pearson $r_{xy}$ sowie das Bestimmtheitsmaß $R^2$ und interpretieren Sie das Ergebnis.",
+    "hints": [
+      "Nutzen Sie $SS_{xx} = 5{,}0$, $SP_{xy} = 7{,}0$ und berechnen Sie $SS_{yy} = \\sum (y_i - \\bar{y})^2 = (-2)^2 + (-1)^2 + 1^2 + 2^2 = 10{,}0$.",
+      "Formel: $r_{xy} = \\frac{SP_{xy}}{\\sqrt{SS_{xx} \\cdot SS_{yy}}} = \\frac{7{,}0}{\\sqrt{5{,}0 \\cdot 10{,}0}} = \\frac{7}{\\sqrt{50}}$.",
+      "Das Bestimmtheitsmaß ist $R^2 = r_{xy}^2 = \\frac{49}{50} = 0{,}98$ ($98\\%$ der Varianz von $y$ werden durch $x$ erklärt)."
+    ],
+    "solution": "Schritt 1: Summe der Abweichungsquadrate von $y$ ($SS_{yy}$) bestimmen:\n$$SS_{yy} = (2-4)^2 + (3-4)^2 + (5-4)^2 + (6-4)^2 = 4 + 1 + 1 + 4 = 10{,}0$$\n\nSchritt 2: Korrelationskoeffizient nach Bravais-Pearson berechnen:\n$$r_{xy} = \\frac{SP_{xy}}{\\sqrt{SS_{xx} \\cdot SS_{yy}}} = \\frac{7{,}0}{\\sqrt{5{,}0 \\cdot 10{,}0}} = \\frac{7{,}0}{\\sqrt{50}} = \\frac{7{,}0}{7{,}071068} \\approx 0{,}9899$$\n\nSchritt 3: Bestimmtheitsmaß $R^2$ berechnen:\n$$R^2 = r_{xy}^2 = \\frac{49}{50} = 0{,}98 = 98\\%$$\n\nInterpretation: Es liegt eine nahezu perfekte, positive lineare Korrelation zwischen den Werbeausgaben $x$ und dem Umsatz $y$ vor ($r \\approx 0{,}99$). $98\\%$ der Streuung des Umsatzes können durch den linearen Zusammenhang mit den Werbeausgaben erklärt werden.",
+    "solutionFormula": "r_{xy} = \\frac{SP_{xy}}{\\sqrt{SS_{xx} \\cdot SS_{yy}}} = \\frac{7}{\\sqrt{50}} \\approx 0{,}9899, \\quad R^2 = 0{,}98",
+    "points": 8
+  },
+  {
+    "id": "exam-p3-matrizen-1",
+    "topicId": "p3-matrizen-lgs",
+    "title": "Klausuraufgabe 3.5",
+    "question": "Gegeben sind die Matrizen $$A = \\begin{pmatrix} 2 & 1 \\\\ 3 & 4 \\end{pmatrix}, \\quad B = \\begin{pmatrix} 1 & 0 \\\\ -2 & 5 \\end{pmatrix}.$$ Berechnen Sie das Matrixprodukt $C = A \\cdot B$ sowie die Determinante $\\det(A)$ und die inverse Matrix $A^{-1}$.",
+    "hints": [
+      "Matrixmultiplikation 'Zeile mal Spalte': $c_{11} = 2 \\cdot 1 + 1 \\cdot (-2) = 0$, $c_{12} = 2 \\cdot 0 + 1 \\cdot 5 = 5$.",
+      "Determinante einer $2 \\times 2$-Matrix: $\\det(A) = ad - bc = 2 \\cdot 4 - 1 \\cdot 3 = 5$.",
+      "Inverse einer $2 \\times 2$-Matrix: $A^{-1} = \\frac{1}{\\det(A)} \\begin{pmatrix} d & -b \\\\ -c & a \\end{pmatrix}$."
+    ],
+    "solution": "Schritt 1: Matrixprodukt $C = A \\cdot B$ berechnen:\n$$C = \\begin{pmatrix} 2 & 1 \\\\ 3 & 4 \\end{pmatrix} \\begin{pmatrix} 1 & 0 \\\\ -2 & 5 \\end{pmatrix} = \\begin{pmatrix} 2(1) + 1(-2) & 2(0) + 1(5) \\\\ 3(1) + 4(-2) & 3(0) + 4(5) \\end{pmatrix} = \\begin{pmatrix} 0 & 5 \\\\ -5 & 20 \\end{pmatrix}$$\n\nSchritt 2: Determinante $\\det(A)$ berechnen:\n$$\\det(A) = 2 \\cdot 4 - 1 \\cdot 3 = 8 - 3 = 5$$\n\nSchritt 3: Inverse Matrix $A^{-1}$ ermitteln:\n$$A^{-1} = \\frac{1}{5} \\begin{pmatrix} 4 & -1 \\\\ -3 & 2 \\end{pmatrix} = \\begin{pmatrix} 0{,}8 & -0{,}2 \\\\ -0{,}6 & 0{,}4 \\end{pmatrix}$$\n\nErgebnis: $A \\cdot B = \\begin{pmatrix} 0 & 5 \\\\ -5 & 20 \\end{pmatrix}$, $\\det(A) = 5$, $A^{-1} = \\begin{pmatrix} 4/5 & -1/5 \\\\ -3/5 & 2/5 \\end{pmatrix}$.",
+    "solutionFormula": "A \\cdot B = \\begin{pmatrix} 0 & 5 \\\\ -5 & 20 \\end{pmatrix}, \\quad \\det(A) = 5, \\quad A^{-1} = \\frac{1}{5}\\begin{pmatrix} 4 & -1 \\\\ -3 & 2 \\end{pmatrix}",
+    "points": 8
+  },
+  {
+    "id": "exam-p3-matrizen-2",
+    "topicId": "p3-input-output",
+    "title": "Klausuraufgabe 3.6",
+    "question": "In einem offenen Leontief-Verflechtungsmodell mit zwei Sektoren ist die Inputmatrix $A = \\begin{pmatrix} 0{,}2 & 0{,}4 \\\\ 0{,}3 & 0{,}1 \\end{pmatrix}$ und der Konsumvektor (Marktnachfrage) $y = \\begin{pmatrix} 40 \\\\ 60 \\end{pmatrix}$ gegeben. Bestimmen Sie die Technologiematrix $(E - A)$ und berechnen Sie den notwendigen Gesamtproduktionsvektor $x = (E - A)^{-1} y$.",
+    "hints": [
+      "Berechnen Sie die Einheitsmatrix $E = \\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \\end{pmatrix}$ und $(E - A) = \\begin{pmatrix} 0{,}8 & -0{,}4 \\\\ -0{,}3 & 0{,}9 \\end{pmatrix}$.",
+      "Berechnen Sie $\\det(E-A) = 0{,}8 \\cdot 0{,}9 - (-0{,}4)(-0{,}3) = 0{,}72 - 0{,}12 = 0{,}60$.",
+      "Die Leontief-Inverse ist $(E-A)^{-1} = \\frac{1}{0{,}6} \\begin{pmatrix} 0{,}9 & 0{,}4 \\\\ 0{,}3 & 0{,}8 \\end{pmatrix}$."
+    ],
+    "solution": "Schritt 1: Matrix $(E - A)$ aufstellen:\n$$E - A = \\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \\end{pmatrix} - \\begin{pmatrix} 0{,}2 & 0{,}4 \\\\ 0{,}3 & 0{,}1 \\end{pmatrix} = \\begin{pmatrix} 0{,}8 & -0{,}4 \\\\ -0{,}3 & 0{,}9 \\end{pmatrix}$$\n\nSchritt 2: Determinante berechnen:\n$$\\det(E - A) = (0{,}8)(0{,}9) - (-0{,}4)(-0{,}3) = 0{,}72 - 0{,}12 = 0{,}60$$\n\nSchritt 3: Leontief-Inverse $(E - A)^{-1}$ ermitteln:\n$$(E - A)^{-1} = \\frac{1}{0{,}60} \\begin{pmatrix} 0{,}9 & 0{,}4 \\\\ 0{,}3 & 0{,}8 \\end{pmatrix} = \\begin{pmatrix} 1{,}5 & 0{,}6667 \\\\ 0{,}5 & 1{,}3333 \\end{pmatrix}$$\n\nSchritt 4: Gesamtproduktion $x = (E - A)^{-1} y$ berechnen:\n$$x = \\frac{1}{0{,}60} \\begin{pmatrix} 0{,}9 & 0{,}4 \\\\ 0{,}3 & 0{,}8 \\end{pmatrix} \\begin{pmatrix} 40 \\\\ 60 \\end{pmatrix} = \\frac{1}{0{,}60} \\begin{pmatrix} 0{,}9 \\cdot 40 + 0{,}4 \\cdot 60 \\\\ 0{,}3 \\cdot 40 + 0{,}8 \\cdot 60 \\end{pmatrix} = \\frac{1}{0{,}60} \\begin{pmatrix} 36 + 24 \\\\ 12 + 48 \\end{pmatrix} = \\frac{1}{0{,}60} \\begin{pmatrix} 60 \\\\ 60 \\end{pmatrix} = \\begin{pmatrix} 100 \\\\ 100 \\end{pmatrix}$$\n\nErgebnis: Der Produktionsvektor lautet $x = \\begin{pmatrix} 100 \\\\ 100 \\end{pmatrix}$.",
+    "solutionFormula": "x = (E - A)^{-1} y = \\begin{pmatrix} 100 \\\\ 100 \\end{pmatrix}",
+    "points": 8
+  },
+  {
+    "id": "exam-p4-simplex-1",
+    "topicId": "p4-simplex-methode",
+    "title": "Klausuraufgabe 4.1",
+    "question": "Gegeben ist das lineare Optimierungsproblem:\\nMaximieren Sie $Z(x_1, x_2) = 3x_1 + 2x_2$ unter den Nebenbedingungen:\n$$x_1 + 2x_2 \\le 8$$\n$$2x_1 + x_2 \\le 10$$\n$$x_1, x_2 \\ge 0$$\nÜberführen Sie das Problem in die Standard-Simplex-Normalform mit Schlupfvariablen $y_1, y_2$ und bestimmen Sie die optimale Lösung $(x_1^*, x_2^*)$ sowie den maximalen Zielfunktionswert $Z_{max}$.",
+    "hints": [
+      "Führen Sie Schlupfvariablen $y_1, y_2 \\ge 0$ ein: $x_1 + 2x_2 + y_1 = 8$, $2x_1 + x_2 + y_2 = 10$ und $-3x_1 - 2x_2 + Z = 0$.",
+      "Erstes Pivot-Element: Spalte $x_1$ (negativster Koeffizient $-3$), Zeilenquotienten $\\min\\{8/1, 10/2\\} = 5$ (Zeile 2).",
+      "Die optimalen Eckenwerte liegen bei $(x_1, x_2) = (4, 2)$ mit Schnittpunkt der Restriktionen."
+    ],
+    "solution": "Schritt 1: Simplex-Normalform mit Schlupfvariablen $y_1, y_2 \\ge 0$ aufstellen:\n- Restriktion 1: $x_1 + 2x_2 + y_1 = 8$\n- Restriktion 2: $2x_1 + x_2 + y_2 = 10$\n- Zielfunktionszeile: $-3x_1 - 2x_2 + Z = 0$\n\nSchritt 2: Simplex-Schritte (oder analytischer Schnittpunkt der aktiven Restriktionen):\nAus $2x_1 + x_2 = 10 \\implies x_2 = 10 - 2x_1$. Einsetzen in $x_1 + 2(10 - 2x_1) = 8 \\implies -3x_1 + 20 = 8 \\implies 3x_1 = 12 \\implies x_1^* = 4$.\nDamit $x_2^* = 10 - 2(4) = 2$.\n\nSchritt 3: Zulässigkeit und Zielfunktionswert prüfen:\n- $x_1 = 4 \\ge 0, \\; x_2 = 2 \\ge 0$\n- Restriktion 1: $4 + 2(2) = 8 \\le 8$ (erfüllt, $y_1 = 0$)\n- Restriktion 2: $2(4) + 2 = 10 \\le 10$ (erfüllt, $y_2 = 0$)\n- Maximaler Zielfunktionswert:\n$$Z_{max} = 3(4) + 2(2) = 12 + 4 = 16$$\n\nErgebnis: Die optimale Lösung ist $x_1^* = 4$, $x_2^* = 2$ mit $Z_{max} = 16$.",
+    "solutionFormula": "x_1^* = 4, \\quad x_2^* = 2, \\quad Z_{max} = 3(4) + 2(2) = 16",
+    "points": 8
+  },
+  {
+    "id": "exam-p4-simplex-2",
+    "topicId": "p4-simplex-methode",
+    "title": "Klausuraufgabe 4.2",
+    "question": "Erläutern Sie das Abbruchkriterium des primalen Simplex-Algorithmus bei Maximierungsproblemen und interpretieren Sie den Schattenpreis (dualen Variablenwert) einer Schlupfvariablen $y_i$ in der optimalen Zielfunktionszeile.",
+    "hints": [
+      "Das Optimalitätskriterium ist erfüllt, wenn alle Koeffizienten in der Zielfunktionszeile $\\ge 0$ sind.",
+      "Ein Schattenpreis gibt an, um wie viel sich der maximale Zielfunktionswert $Z_{max}$ erhöht, wenn die Kapazität der $i$-ten Restriktion um 1 Einheit vergrößert wird.",
+      "Ist eine Schlupfvariable in der Basis ($y_i > 0$), ist die Restriktion nicht bindend und ihr Schattenpreis beträgt $0$."
+    ],
+    "solution": "Schritt 1: Optimalitätskriterium (Abbruchkriterium):\nDer primale Simplex-Algorithmus bricht im Maximum ab, sobald in der aktuellen Zielfunktionszeile (bei Schreibweise $-c_j x_j + Z = 0$) keine negativen Koeffizienten mehr vorhanden sind (alle relativen Kosten $\\ge 0$). Es gibt keine eintauschbare Nichtbasisvariable mehr, die den Zielfunktionswert weiter verbessern könnte.\n\nSchritt 2: Schattenpreis (Duale Variable):\nDer Koeffizient einer Schlupfvariablen $y_i$ in der optimalen Zielfunktionszeile entspricht dem Schattenpreis (Marginalwert) der $i$-ten Ressource. Er beziffert die Grenzproduktivität der Kapazität: Erhöht sich die rechte Seite $b_i$ der $i$-ten Restriktion um eine Einheit ($b_i \\to b_i + 1$), so steigt der maximale Gewinn um genau diesen Schattenpreis $\\lambda_i$.\n\nSchritt 3: Komplementärer Schlupf:\nIst eine Ressource nicht voll ausgelastet ($y_i > 0$, Restriktion hat Schlupf), so ist der Schattenpreis stets $\\lambda_i = 0$.",
+    "solutionFormula": "\\Delta Z_{max} \\approx \\lambda_i \\cdot \\Delta b_i, \\quad \\lambda_i = \\text{Schattenpreis der Restriktion } i",
+    "points": 6
+  }
+]

@@ -1,0 +1,815 @@
+{
+  "meta": {
+    "title": "Wirtschaftsmathematik & Statistik 1. Semester",
+    "targetGrade": "1,5 - 2,0",
+    "version": "1.1.0"
+  },
+  "phases": [
+    {
+      "id": "phase-0",
+      "title": "Phase 0: Mathematische Grundlagen (Vorkurs)",
+      "description": "Fundamentale Rechentechniken: Bruchrechnung, Potenz- und Wurzelgesetze, Gleichungen.",
+      "modelSolution": {
+        "title": "Klausuraufgabe Phase 0: Quadratische Gleichung & Termvereinfachung",
+        "context": "Ein mittelständischer Betrieb modelliert seine Gewinnschwelle über die quadratische Gleichung $2x^2 - 12x + 10 = 0$. Zudem soll zur Kennzahlenberechnung der komplexe Exponentenausdruck $T(x) = \\frac{x^3 \\cdot \\sqrt[3]{x^6}}{(x^2)^2 \\cdot x^{-1}}$ für $x > 0$ vereinfacht werden.",
+        "given": [
+          "Quadratische Modellgleichung: $2x^2 - 12x + 10 = 0$",
+          "Bruch- und Potenzterm: $T(x) = \\frac{x^3 \\cdot \\sqrt[3]{x^6}}{(x^2)^2 \\cdot x^{-1}}$ für $x > 0$"
+        ],
+        "wanted": [
+          "a) Alle reellen Nullstellen $x_1, x_2$ der Gleichung mittels p-q-Formel",
+          "b) Vollständig gekürzter Term $T(x)$ in Potenzschreibweise"
+        ],
+        "steps": [
+          {
+            "stepNumber": 1,
+            "title": "Normalform herstellen (Division durch Leitkoeffizienten 2)",
+            "latex": "2x^2 - 12x + 10 = 0 \\iff x^2 - 6x + 5 = 0",
+            "explanation": "Vor Anwendung der p-q-Formel muss der Koeffizient vor $x^2$ exakt 1 sein. Wir teilen die gesamte Gleichung durch 2. Es folgt: $p = -6$ und $q = 5$."
+          },
+          {
+            "stepNumber": 2,
+            "title": "p-q-Formel einsetzen und Diskriminante prüfen",
+            "latex": "x_{1,2} = -\\frac{-6}{2} \\pm \\sqrt{\\left(-\\frac{6}{2}\\right)^2 - 5} = 3 \\pm \\sqrt{9 - 5} = 3 \\pm \\sqrt{4} = 3 \\pm 2",
+            "explanation": "Die Diskriminante $D = 4 > 0$ liefert zwei voneinander verschiedene reelle Lösungen: $x_1 = 3 + 2 = 5$ und $x_2 = 3 - 2 = 1$."
+          },
+          {
+            "stepNumber": 3,
+            "title": "Potenzgesetze auf Zähler und Nenner von T(x) anwenden",
+            "latex": "T(x) = \\frac{x^3 \\cdot (x^6)^{1/3}}{x^{2 \\cdot 2} \\cdot x^{-1}} = \\frac{x^3 \\cdot x^2}{x^4 \\cdot x^{-1}} = \\frac{x^{3+2}}{x^{4 + (-1)}} = \\frac{x^5}{x^3}",
+            "explanation": "Wurzel als Potenz schreiben: $\\sqrt[3]{x^6} = x^{6/3} = x^2$. Potenz von Potenzen im Nenner: $(x^2)^2 = x^4$. Gleiche Basen multiplizieren: Exponenten addieren."
+          },
+          {
+            "stepNumber": 4,
+            "title": "Division von Potenzen gleicher Basis",
+            "latex": "T(x) = x^{5 - 3} = x^2",
+            "explanation": "Zählerpotenz minus Nennerpotenz ergibt $x^2$."
+          }
+        ],
+        "result": "Die Nullstellen lauten $x_1 = 5$ und $x_2 = 1$. Der vereinfachte Term lautet $T(x) = x^2$.",
+        "resultLatex": "x_1 = 5, \\quad x_2 = 1, \\quad T(x) = x^2",
+        "verification": "Probe für $x_1=5$: $2(5)^2 - 12(5) + 10 = 50 - 60 + 10 = 0$ (wahr). Probe für $x_2=1$: $2(1)^2 - 12(1) + 10 = 2 - 12 + 10 = 0$ (wahr). Probe für $T(2)$: $T(2) = \\frac{8 \\cdot 4}{16 \\cdot 0.5} = \\frac{32}{8} = 4 = 2^2$ (wahr).",
+        "interpretation": "Die Gewinnschwelle wird bei $x_2 = 1$ Mengeneinheit erreicht (Break-Even), während $x_1 = 5$ die obere Nutzengrenze (Gewinngrenze) darstellt. Bei $x > 5$ gerät das Unternehmen durch quadratisch steigende Kosten wieder in die Verlustzone."
+      },
+      "topics": [
+        {
+          "id": "p0-potenzen-wurzeln",
+          "title": "Potenz- und Wurzelgesetze",
+          "explanation": "Was ist das? Eine Potenz wie $a^n$ bedeutet nur: Schreibe die Zahl $a$ genau $n$-mal hintereinander als Mal-Aufgabe. Beispiel: $2^3 = 2 \\cdot 2 \\cdot 2 = 8$. Eine Wurzel ist die Umkehrfrage dazu: $\\sqrt[3]{8} = 2$, weil $2^3 = 8$.\n\nWozu brauche ich das? Im Studium bei Zinseszins ($K_n = K_0 \\cdot (1+p)^n$), bei Wachstumsraten, bei Einheiten ($m^2, m^3$) und überall wo Formeln umgeformt werden. Ohne diese Regeln verrechnest du dich bei jedem Bruch mit $x$ im Nenner.\n\nMini-Beispiel: Du hast $\\frac{x^3 \\cdot \\sqrt{x}}{x^{-2}}$. Denke an Äpfel-Kisten: Gleiche Basis $x$ heisst gleiche Sorte, dann darfst du Anzahlen (Exponenten) einfach addieren. $\\sqrt{x} = x^{1/2}$, also oben $x^3 \\cdot x^{1/2} = x^{3.5}$. Teilen durch $x^{-2}$ heisst: Minus Minus wird Plus, also $x^{3.5 - (-2)} = x^{5.5} = x^{11/2}$.",
+          "formulas": [
+            {
+              "label": "Multiplikation gleicher Basis",
+              "latex": "a^r \\cdot a^s = a^{r+s}",
+              "note": "Alltag: Gleiche Sorte zusammenzählen. $2^2 \\cdot 2^3 = 2^5 = 32$ statt $4 \\cdot 8$ einzeln."
+            },
+            {
+              "label": "Potenz von Potenzen",
+              "latex": "(a^r)^s = a^{r \\cdot s}",
+              "note": "Alltag: Kiste in Kiste. $(x^2)^3 = x^6$. Zinseszins über 2 Jahre à 2 Faktoren."
+            },
+            {
+              "label": "Negative Exponenten",
+              "latex": "a^{-n} = \\frac{1}{a^n}",
+              "note": "Alltag: In den Keller bringen. $x^{-2} = 1/x^2$. Aus Teilen wird Mal, wenn du die Etage wechselst."
+            },
+            {
+              "label": "Wurzel als Potenz",
+              "latex": "\\sqrt[n]{a^m} = a^{\\frac{m}{n}}",
+              "note": "Alltag: Wurzel ist nur Bruch-Exponent. $\\sqrt{x} = x^{1/2} \\approx 3.16$ für $x=10$."
+            }
+          ],
+          "visualizationType": "function_plot",
+          "graph": {
+            "title": "Potenzfunktionen im Vergleich",
+            "description": "Zeigt $y=x^2$, $y=x^3$ und $y=\\sqrt{x}$ für $x>0$. Beobachte: Wurzeln wachsen langsam, Potenzen steil."
+          },
+          "questions": [
+            {
+              "id": "q-p0-1",
+              "type": "multiple_choice",
+              "question": "Vereinfachen Sie den Term: \\[ \\frac{x^3 \\cdot \\sqrt{x}}{x^{-2}} \\] für \\(x > 0\\).",
+              "options": [
+                "$x^{11/2}$",
+                "$x^{7/2}$",
+                "$x^{3/2}$",
+                "$x^6$"
+              ],
+              "correctIndex": 0,
+              "hint": "Schreiben Sie die Wurzel als Potenz \\(x^{1/2}\\) und bringen Sie den Nenner in den Zähler.",
+              "hints": [
+                "Tipp 1 (Start): Schreibe jede Wurzel als Potenz: $\\sqrt{x} = x^{1/2}$. Was steht dann oben? $x^3 \\cdot x^{1/2}$.",
+                "Tipp 2 (Zusammenfassen): Gleiche Basis oben: Exponenten addieren. $3 + 1/2 = 7/2$. Also oben $x^{7/2}$. Nenner $x^{-2}$ bedeutet $1/x^2$ im Keller.",
+                "Tipp 3 (Keller auflösen): Teilen durch $x^{-2}$ heisst $x^{7/2 - (-2)}$. Rechne $7/2 + 2 = 7/2 + 4/2$. Was kommt raus?"
+              ],
+              "solution": "Schritt 1: Wurzel umformen: $x^3 \\cdot \\sqrt{x} = x^3 \\cdot x^{1/2} = x^{3 + 1/2} = x^{7/2}$.\nSchritt 2: Division behandeln: $\\frac{x^{7/2}}{x^{-2}} = x^{7/2 - (-2)} = x^{7/2 + 2}$.\nSchritt 3: Gleichnamig machen: $2 = 4/2$, also $7/2 + 4/2 = 11/2$.\nEndergebnis: $x^{11/2}$. Probe mit $x=4$: oben $64 \\cdot 2 = 128$, unten $1/16$, $128 / (1/16) = 2048 = 4^{5.5}$ stimmt."
+            }
+          ]
+        },
+        {
+          "id": "p0-quadratische-glg",
+          "title": "Quadratische Gleichungen (p-q-Formel)",
+          "explanation": "Was ist das? Eine Gleichung mit $x^2$ wie $x^2 - 4x - 5 = 0$ fragt: Für welche $x$ kommt Null raus? Die Parabel schneidet die $x$-Achse genau an diesen Punkten. Die p-q-Formel $x_{1,2} = -p/2 \\pm \\sqrt{(p/2)^2 - q}$ liefert beide Schnittpunkte auf einen Schlag.\n\nWozu brauche ich das? Gewinnschwellen ($G(x)=0$), Break-Even, Nullstellen von Kosten- und Erlös-Parabeln sowie Optimierung. Immer wenn eine Kurve erst steigt und dann fällt, steckt eine quadratische Gleichung dahinter.\n\nMini-Beispiel: $2x^2 - 8x - 10 = 0$. Zuerst durch 2 teilen: $x^2 - 4x - 5 = 0$, also $p=-4$, $q=-5$. Dann $-p/2 = 2$ und unter der Wurzel $4 - (-5) = 9$. Die Wurzel aus 9 ist 3. Also $x = 2 \\pm 3$, d.h. $x_1=5$ und $x_2=-1$.",
+          "formulas": [
+            {
+              "label": "p-q-Formel",
+              "latex": "x_{1,2} = -\\frac{p}{2} \\pm \\sqrt{\\left(\\frac{p}{2}\\right)^2 - q}",
+              "note": "Alltag: Navi zur Nullstelle. Nur für $x^2 + px + q = 0$ (vorne muss $1 \\cdot x^2$ stehen)."
+            },
+            {
+              "label": "Diskriminante",
+              "latex": "D = \\left(\\frac{p}{2}\\right)^2 - q",
+              "note": "Alltag: Ampel. $D>0$ = 2 Lösungen, $D=0$ = 1 Berührpunkt, $D<0$ = keine reelle Lösung."
+            }
+          ],
+          "visualizationType": "parabola_plot",
+          "graph": {
+            "title": "Parabel mit Nullstellen",
+            "description": "Parabel $y=x^2-4x-5$ mit Scheitelpunkt bei $x=2$ und Nullstellen bei $x=-1$ und $x=5$."
+          },
+          "questions": [
+            {
+              "id": "q-p0-2",
+              "type": "multiple_choice",
+              "question": "Bestimmen Sie die Lösungen der Gleichung: \\[ 2x^2 - 8x - 10 = 0 \\]",
+              "options": [
+                "$x_1 = 5, \\; x_2 = -1$",
+                "$x_1 = 4, \\; x_2 = -2$",
+                "$x_1 = 5, \\; x_2 = 1$",
+                "$x_1 = 10, \\; x_2 = -2$"
+              ],
+              "correctIndex": 0,
+              "hint": "Teilen Sie zuerst durch 2, sodass \\(x^2 - 4x - 5 = 0\\) entsteht, und lesen Sie \\(p = -4\\) sowie \\(q = -5\\) ab.",
+              "hints": [
+                "Tipp 1 (Normieren): Vor $x^2$ muss eine 1 stehen. Teile alles durch 2: $x^2 - 4x - 5 = 0$. Lies ab: $p=-4$, $q=-5$.",
+                "Tipp 2 (Einsetzen): Berechne $-p/2 = -(-4)/2 = 2$ und $D = (-4/2)^2 - (-5) = 4 + 5 = 9$. Was ist $\\sqrt{9}$?",
+                "Tipp 3 (Lösungen bilden): $x = 2 \\pm 3$. Rechne $2+3$ und $2-3$. Achte auf Vorzeichen!"
+              ],
+              "solution": "Schritt 1 - Normieren: $2x^2 - 8x - 10 = 0$ durch 2 teilen ergibt $x^2 - 4x - 5 = 0$, also $p=-4$, $q=-5$.\nSchritt 2 - Formel anwenden: $x_{1,2} = -(-4)/2 \\pm \\sqrt{(-4/2)^2 - (-5)} = 2 \\pm \\sqrt{4 + 5} = 2 \\pm 3$.\nSchritt 3 - Ausrechnen: $x_1 = 2+3 = 5$, $x_2 = 2-3 = -1$.\nEndergebnis: $x_1=5$, $x_2=-1$. Probe: $2 \\cdot 25 - 40 - 10 = 0$ und $2 \\cdot 1 + 8 - 10 = 0$ stimmen beide."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-1",
+      "title": "Phase 1: Funktionen & Differenzialrechnung",
+      "description": "Funktionen, Ableitungsregeln, Extremwertbestimmung, ökonomische Funktionen und Kurvendiskussion.",
+      "modelSolution": {
+        "title": "Klausuraufgabe Phase 1: Gewinnmaximierung & Cournot'scher Punkt",
+        "context": "Ein Monopolist sieht sich der linearen Preis-Absatz-Funktion $p(x) = 100 - 2x$ gegenüber. Seine Gesamtkostenfunktion beträgt $K(x) = x^2 + 10x + 150$. Ermitteln Sie die gewinnmaximale Ausbringungsmenge, den maximalen Gesamtgewinn und den optimalen Angebotspreis.",
+        "given": [
+          "Preis-Absatz-Funktion: $p(x) = 100 - 2x$ für $0 \\le x \\le 50$",
+          "Gesamtkostenfunktion: $K(x) = x^2 + 10x + 150$"
+        ],
+        "wanted": [
+          "a) Erlösfunktion $E(x)$ und Gewinnfunktion $G(x)$",
+          "b) Gewinnmaximale Produktionsmenge $x^*$",
+          "c) Maximaler Gewinn $G(x^*)$ sowie Cournot'scher Preis $p(x^*)$"
+        ],
+        "steps": [
+          {
+            "stepNumber": 1,
+            "title": "Erlös- und Gewinnfunktion aufstellen",
+            "latex": "E(x) = p(x) \\cdot x = (100 - 2x)x = 100x - 2x^2 \\implies G(x) = E(x) - K(x) = (100x - 2x^2) - (x^2 + 10x + 150) = -3x^2 + 90x - 150",
+            "explanation": "Erlös ist Preis mal Menge. Der Gewinn ist die Differenz von Erlös und Gesamtkosten. Achte beim Subtrahieren von $K(x)$ auf das Vorzeichenminus vor allen Kostentermen."
+          },
+          {
+            "stepNumber": 2,
+            "title": "Notwendige Bedingung für Extremwert (G'(x) = 0)",
+            "latex": "G'(x) = -6x + 90 = 0 \\iff 6x = 90 \\iff x^* = 15",
+            "explanation": "Wir leiten $G(x)$ mit der Potenzregel ab ($(-3x^2)' = -6x$, $(90x)' = 90$, $(-150)' = 0$) und setzen die erste Ableitung gleich 0 (Grenzgewinn = 0 bzw. Grenzerlös = Grenzkosten)."
+          },
+          {
+            "stepNumber": 3,
+            "title": "Hinreichende Bedingung für ein Maximum (G''(x) < 0)",
+            "latex": "G''(x) = -6 < 0 \\quad \\forall x",
+            "explanation": "Da die zweite Ableitung konstant negativ ist ($G''(15) = -6 < 0$), liegt bei $x^* = 15$ Mengeneinheiten ein globales Gewinnmaximum vor."
+          },
+          {
+            "stepNumber": 4,
+            "title": "Maximalgewinn und Cournot-Preis berechnen",
+            "latex": "G(15) = -3(15)^2 + 90(15) - 150 = -675 + 1350 - 150 = 525 \\quad [\\text{GE}], \\quad p(15) = 100 - 2(15) = 70 \\quad [\\text{GE/ME}]",
+            "explanation": "Wir setzen $x^* = 15$ in die Gewinnfunktion $G(x)$ und in die Preis-Absatz-Funktion $p(x)$ ein."
+          }
+        ],
+        "result": "Die gewinnmaximale Menge beträgt x* = 15 ME bei einem Preis von 70 GE/ME. Der maximale Gewinn beläuft sich auf 525 GE.",
+        "resultLatex": "x^* = 15 \\text{ ME}, \\quad p(15) = 70 \\text{ GE/ME}, \\quad G_{\\max} = 525 \\text{ GE}",
+        "verification": "Grenzerlös bei $x=15$: $E'(15) = 100 - 4(15) = 40$. Grenzkosten bei $x=15$: $K'(15) = 2(15) + 10 = 40$. Da $E'(15) = K'(15) = 40$, stimmt das ökonomische Optimum exakt.",
+        "interpretation": "Bei einer Produktion von 15 Einheiten deckt der Stückpreis von 70 GE die Stückkosten von $K(15)/15 = 540/15 = 36$ GE weit ab. Der Stückgewinn beträgt 34 GE, was in Summe den maximalen Gesamtgewinn von $15 \\cdot 34 = 510 + 15 = 525$ GE erzeugt."
+      },
+      "topics": [
+        {
+          "id": "p1-ableitungsregeln",
+          "title": "Ableitungsregeln (Produkt-, Quotienten- & Kettenregel)",
+          "explanation": "Was ist das? Die Ableitung $f'(x)$ misst die Steigung bzw. das Tempo der Änderung einer Kurve. Die Produktregel greift bei $u \\cdot v$, die Quotientenregel bei Brüchen $u/v$ und die Kettenregel bei verschachtelten Funktionen $f(g(x))$.\n\nWozu brauche ich das? Für Grenzkosten $K'(x)$, Grenzgewinn und Preiselastizitäten. Ein Onlineshop mit Erlös $E(x) = p(x) \\cdot x$ (Preis mal Menge) ändert beides gleichzeitig – ohne Produktregel gibt es keinen korrekten Grenzertrag.\n\nMini-Beispiel: $f(x) = \\frac{x^2 - 3}{x + 1}$. Oben $u = x^2 - 3$ mit $u'=2x$, unten $v = x + 1$ mit $v'=1$. Quotientenregel $(u'v - uv')/v^2$ liefert im Zähler $2x(x+1) - (x^2-3) = x^2 + 2x + 3$. Das Ergebnis ist $f'(x) = \\frac{x^2 + 2x + 3}{(x+1)^2}$.",
+          "formulas": [
+            {
+              "label": "Produktregel",
+              "latex": "(u \\cdot v)' = u' \\cdot v + u \\cdot v'",
+              "note": "Alltag: Erlös = Preis mal Menge. Beide verändern sich, daher zwei Summenterme."
+            },
+            {
+              "label": "Quotientenregel",
+              "latex": "\\left(\\frac{u}{v}\\right)' = \\frac{u' \\cdot v - u \\cdot v'}{v^2}",
+              "note": "Alltag: Stückkosten $K(x)/x$. Zähler: Oben ableiten mal unten minus oben mal unten ableiten. Nenner: quadrieren."
+            },
+            {
+              "label": "Kettenregel",
+              "latex": "(f(g(x)))' = f'(g(x)) \\cdot g'(x)",
+              "note": "Alltag: Zwiebel von aussen nach innen schälen: Äussere Ableitung mal innere Ableitung."
+            }
+          ],
+          "visualizationType": "tangent_plot",
+          "graph": {
+            "title": "Funktion mit Tangente",
+            "description": "Kurve $y=(x^2-3)/(x+1)$ mit Tangentensteigung $f'(1)=1.5$ an der Stelle $x=1$."
+          },
+          "questions": [
+            {
+              "id": "q-p1-1",
+              "type": "multiple_choice",
+              "question": "Leiten Sie die Funktion \\[ f(x) = \\frac{x^2 - 3}{x + 1} \\] nach \\(x\\) ab.",
+              "options": [
+                "$f'(x) = \\frac{x^2 + 2x + 3}{(x+1)^2}$",
+                "$f'(x) = \\frac{x^2 - 2x - 3}{(x+1)^2}$",
+                "$f'(x) = 2x$",
+                "$f'(x) = \\frac{3x^2 + 2x - 3}{(x+1)^2}$"
+              ],
+              "correctIndex": 0,
+              "hint": "Setzen Sie \\(u = x^2 - 3 \\implies u' = 2x\\) und \\(v = x + 1 \\implies v' = 1\\) in die Quotientenregel ein.",
+              "hints": [
+                "Tipp 1 (Sortieren): Benenne $u = x^2 - 3$ ($u'=2x$) und $v = x+1$ ($v'=1$). Wende die Quotientenregel $\\frac{u'v - uv'}{v^2}$ an.",
+                "Tipp 2 (Zähler bauen): $u'v = 2x(x+1) = 2x^2 + 2x$. $uv' = (x^2-3) \\cdot 1 = x^2 - 3$. Rechne $u'v - uv'$. Setze eine Klammer um $uv'$!",
+                "Tipp 3 (Klammer auflösen): $2x^2 + 2x - (x^2 - 3) = 2x^2 - x^2 + 2x + 3 = x^2 + 2x + 3$. Der Nenner $(x+1)^2$ bleibt unverändert stehen."
+              ],
+              "solution": "Schritt 1: Zähler und Nenner ableiten: $u = x^2 - 3 \\implies u'=2x$, $v = x+1 \\implies v'=1$.\nSchritt 2: In Quotientenregel einsetzen: $\\frac{2x(x+1) - (x^2 - 3) \\cdot 1}{(x+1)^2}$.\nSchritt 3: Zähler ausmultiplizieren: $2x^2 + 2x - x^2 + 3 = x^2 + 2x + 3$.\nEndergebnis: $f'(x) = \\frac{x^2 + 2x + 3}{(x+1)^2}$. Probe mit $x=0$: $f'(0) = 3/1 = 3$. Tangentensteigung passt."
+            }
+          ]
+        },
+        {
+          "id": "p1-oekonomische-anwendung",
+          "title": "Gewinnmaximierung & Gewinnschwelle",
+          "explanation": "Was ist das? Der Gewinn ist das, was nach Abzug aller Kosten übrig bleibt: $G(x) = E(x) - K(x)$. Die Gewinnschwelle ist der Break-Even-Point ($G(x)=0$). Das Gewinnmaximum liegt dort, wo die Steigung der Gewinnkurve flach wird: $G'(x) = 0$. Das bedeutet ökonomisch: Grenzerlös = Grenzkosten ($E'(x) = K'(x)$).\n\nWozu brauche ich das? Für jede unternehmerische Mengen- und Preisentscheidung. Wenn ein weiteres produziertes Stück mehr kostet als es einbringt ($K'(x) > E'(x)$), sinkt der Gewinn – du musst genau am Schnittpunkt aufhören.\n\nMini-Beispiel: Bei $E(x) = 20x$ und $K(x) = x^2 + 4x + 20$ lautet der Gewinn $G(x) = -x^2 + 16x - 20$. Ableitung $G'(x) = -2x + 16 = 0 \\implies x=8$. Mit $G''(8) = -2 < 0$ ist es ein Maximum mit Höchstgewinn $G(8) = 44$.",
+          "formulas": [
+            {
+              "label": "Gewinnfunktion",
+              "latex": "G(x) = E(x) - K(x) = p(x) \\cdot x - K(x)",
+              "note": "Alltag: Kassensturz. Gesamteinnahmen minus Gesamtausgaben."
+            },
+            {
+              "label": "Gewinnmaximum (Bedingung)",
+              "latex": "G'(x) = 0 \\iff E'(x) = K'(x)",
+              "note": "Alltag: Optimaler Punkt: Das nächste verkaufte Stück bringt exakt so viel ein, wie es in der Herstellung kostet."
+            },
+            {
+              "label": "Hinreichende Bedingung",
+              "latex": "G''(x^*) < 0",
+              "note": "Alltag: Rechtskurve / Gipfelprüfung: Bestätigt, dass es sich um einen Höchstgewinn und kein Verlustloch handelt."
+            }
+          ],
+          "visualizationType": "profit_plot",
+          "graph": {
+            "title": "Erlös-, Kosten- und Gewinnkurve",
+            "description": "Zeigt Erlös $E(x)$, Kosten $K(x)$ und Gewinn $G(x)$ mit Maximum bei $x=8$ und Gewinnschwelle bei $x=1.42$."
+          },
+          "questions": [
+            {
+              "id": "q-p1-2",
+              "type": "multiple_choice",
+              "question": "Ein Unternehmen hat die Erlösfunktion \\(E(x) = 20x\\) und die Kostenfunktion \\(K(x) = x^2 + 4x + 20\\). Bei welcher Produktionsmenge \\(x\\) wird der Gewinn maximal?",
+              "options": [
+                "$x = 8$",
+                "$x = 10$",
+                "$x = 6$",
+                "$x = 16$"
+              ],
+              "correctIndex": 0,
+              "hint": "Bilden Sie \\(G(x) = E(x) - K(x)\\), leiten Sie ab und setzen Sie \\(G'(x) = 0\\).",
+              "hints": [
+                "Tipp 1 (Gewinnfunktion aufstellen): $G(x) = 20x - (x^2 + 4x + 20) = -x^2 + 16x - 20$.",
+                "Tipp 2 (Ableiten): Bilde die erste Ableitung $G'(x) = -2x + 16$.",
+                "Tipp 3 (Nullsetzen): Löse die Gleichung $-2x + 16 = 0$ nach $x$ auf: $2x = 16$."
+              ],
+              "solution": "Schritt 1: Gewinnfunktion aufstellen: $G(x) = E(x) - K(x) = 20x - (x^2 + 4x + 20) = -x^2 + 16x - 20$.\nSchritt 2: Erste Ableitung bilden und nullsetzen: $G'(x) = -2x + 16 = 0 \\implies 2x = 16 \\implies x = 8$.\nSchritt 3: Hinreichende Bedingung prüfen: $G''(x) = -2 < 0$ (echtes lokales Maximum).\nEndergebnis: Die gewinnmaximale Menge beträgt $x = 8$ Mengeneinheiten. Maximaler Gewinn: $G(8) = -64 + 128 - 20 = 44$ Geldeinheiten."
+            }
+          ]
+        },
+        {
+          "id": "p1-integralrechnung",
+          "title": "Integralrechnung & Renten (Konsumenten-/Produzentenrente)",
+          "explanation": "Was ist das? Das Integral $\\int_a^b f(x)\\,dx$ berechnet die aufsummierte Fläche unter einer Kurve zwischen $a$ und $b$. Die Stammfunktion $F(x)$ ist das genaue Gegenteil der Ableitung: Wenn $F'(x) = f(x)$, dann ist das Integral $F(b) - F(a)$.\n\nWozu brauche ich das? In der VWL und BWL für Wohlfahrtsmaße: Die Konsumentenrente misst den Vorteil der Käufer, die bereit gewesen wären, mehr als den Marktpreis zu zahlen. Die Produzentenrente misst den Vorteil der Verkäufer.\n\nMini-Beispiel: Preis-Absatz-Funktion $p(x) = 50 - 2x$, Gleichgewichtsmenge $x_0 = 10$, Gleichgewichtspreis $p_0 = 30$. Konsumentenrente ist die Dreiecksfläche zwischen Nachfragekurve und Preislinie: $KR = \\int_0^{10} (50 - 2x - 30)\\,dx = \\int_0^{10} (20 - 2x)\\,dx = [20x - x^2]_0^{10} = 200 - 100 = 100$.",
+          "formulas": [
+            {
+              "label": "Hauptsatz der Differenzial- und Integralrechnung",
+              "latex": "\\int_a^b f(x)\\,dx = F(b) - F(a)",
+              "note": "Alltag: Gesamter Zuwachs von $a$ bis $b$ = Endstand minus Anfangsstand der Stammfunktion."
+            },
+            {
+              "label": "Potenzregel der Integration",
+              "latex": "\\int x^n\\,dx = \\frac{1}{n+1}x^{n+1} + C \\quad (n \neq -1)",
+              "note": "Alltag: Exponent um 1 erhöhen, dann durch die neue Zahl teilen."
+            },
+            {
+              "label": "Konsumentenrente",
+              "latex": "KR = \\int_0^{x_0} (p_N(x) - p_0)\\,dx",
+              "note": "Alltag: Ersparnis aller Käufer, die im Kopf bereit waren, einen höheren Preis zu zahlen."
+            }
+          ],
+          "visualizationType": "integral_area_plot",
+          "graph": {
+            "title": "Konsumenten- und Produzentenrente",
+            "description": "Fläche der Konsumentenrente zwischen Nachfragekurve $p(x)=50-2x$ und Marktpreislinie $p_0=30$ von $x=0$ bis $x=10$."
+          },
+          "questions": [
+            {
+              "id": "q-p1-3",
+              "type": "multiple_choice",
+              "question": "Berechnen Sie das bestimmte Integral: \\[ \\int_{1}^{3} (3x^2 - 2x + 1)\\,dx \\]",
+              "options": [
+                "$20$",
+                "$18$",
+                "$24$",
+                "$16$"
+              ],
+              "correctIndex": 0,
+              "hint": "Finden Sie zuerst die Stammfunktion \\(F(x) = x^3 - x^2 + x\\) und berechnen Sie \\(F(3) - F(1)\\).",
+              "hints": [
+                "Tipp 1 (Stammfunktion bilden): Integriere gliedweise: $\\int 3x^2 dx = x^3$, $\\int -2x dx = -x^2$, $\\int 1 dx = x$. Also $F(x) = x^3 - x^2 + x$.",
+                "Tipp 2 (Obere Grenze einsetzen): Berechne $F(3) = 3^3 - 3^2 + 3 = 27 - 9 + 3 = 21$.",
+                "Tipp 3 (Untere Grenze abziehen): Berechne $F(1) = 1^3 - 1^2 + 1 = 1$. Subtrahiere $F(3) - F(1) = 21 - 1$."
+              ],
+              "solution": "Schritt 1: Stammfunktion bestimmen: $F(x) = \\frac{3}{3}x^3 - \\frac{2}{2}x^2 + x = x^3 - x^2 + x$.\nSchritt 2: Obere Grenze einsetzen: $F(3) = 3^3 - 3^2 + 3 = 27 - 9 + 3 = 21$.\nSchritt 3: Untere Grenze einsetzen und Differenz bilden: $F(1) = 1^3 - 1^2 + 1 = 1 \\implies F(3) - F(1) = 21 - 1 = 20$.\nEndergebnis: Der Wert des Integrals beträgt $20$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-2",
+      "title": "Phase 2: Finanzmathematik",
+      "description": "Zinseszins, unterjährige Verzinsung, Rentenrechnung, Annuitätentilgung und Investitionsrechnung.",
+      "topics": [
+        {
+          "id": "p2-zinseszins",
+          "title": "Zinseszins & Unterjährige Verzinsung",
+          "explanation": "Was ist das? Zinseszins bedeutet: Du bekommst nicht nur Zinsen auf dein ursprüngliches Startkapital $K_0$, sondern in den Folgejahren auch Zinsen auf die bereits gutgeschriebenen Zinsen. Das Kapital wächst exponentiell mit dem Aufzinsungsfaktor $q = 1 + i$.\n\nWozu brauche ich das? Vermögensaufbau, Altersvorsorge, Sparpläne, Kredite und Firmenbewertungen. Wer den Zinseszinseffekt versteht, versteht die Zeitpräferenz des Geldes: 1.000 € heute sind mehr wert als 1.000 € in 10 Jahren.\n\nMini-Beispiel: Du legst $K_0 = 5.000$ € für $n = 3$ Jahre zu $i = 4\\%$ ($q = 1{,}04$) an. Nach 3 Jahren besitzt du $K_3 = 5000 \\cdot 1{,}04^3 = 5000 \\cdot 1{,}124864 = 5.624{,}32$ €. Der reine Zinseszins-Gewinn über die einfachen Zinsen ($3 \\cdot 200 = 600$ €) beträgt $24{,}32$ €.",
+          "formulas": [
+            {
+              "label": "Zinseszinsformel (Endkapital)",
+              "latex": "K_n = K_0 \\cdot (1 + i)^n = K_0 \\cdot q^n",
+              "note": "Alltag: Startkapital mal Zinsfaktor hoch Anzahl der Jahre."
+            },
+            {
+              "label": "Barwert (Abzinsung)",
+              "latex": "K_0 = K_n \\cdot (1 + i)^{-n} = \\frac{K_n}{q^n}",
+              "note": "Alltag: Was ist eine zukünftige Auszahlung von $K_n$ heute real wert?"
+            },
+            {
+              "label": "Unterjährige Verzinsung",
+              "latex": "K_n = K_0 \\cdot \\left(1 + \\frac{i_{nom}}{m}\\right)^{n \\cdot m}",
+              "note": "Alltag: Monatliche oder quartalsweise Zinsgutschrift ($m = 12$ bzw. $m = 4$). Erhöht die effektive Rendite."
+            }
+          ],
+          "visualizationType": "compound_interest_plot",
+          "graph": {
+            "title": "Zinseszinseffekt über die Zeit",
+            "description": "Vergleich von linearem Zinswachstum vs. exponentiellem Zinseszins-Wachstum über 20 Jahre."
+          },
+          "questions": [
+            {
+              "id": "q-p2-1",
+              "type": "multiple_choice",
+              "question": "Ein Startkapital von \\(K_0 = 5.000\\) € wird für \\(n = 3\\) Jahre zu einem Zinssatz von \\(i = 4\\%\\) p.a. mit Zinseszins angelegt. Welches Endkapital \\(K_3\\) ergibt sich?",
+              "options": [
+                "5.624,32 €",
+                "5.600,00 €",
+                "5.612,48 €",
+                "5.720,00 €"
+              ],
+              "correctIndex": 0,
+              "hint": "Nutzen Sie die Formel \\(K_n = K_0 \\cdot (1 + i)^n\\) mit \\(q = 1,04\\).",
+              "hints": [
+                "Tipp 1 (Zinsfaktor bestimmen): Zinssatz $4\\% = 0{,}04$, also ist der Aufzinsungsfaktor $q = 1 + 0{,}04 = 1{,}04$.",
+                "Tipp 2 (Potenz berechnen): Rechne $q^3 = 1{,}04^3 = 1{,}04 \\cdot 1{,}04 \\cdot 1{,}04 = 1{,}124864$.",
+                "Tipp 3 (Mit Kapital multiplizieren): Multipliziere $5000 \\cdot 1{,}124864$. Achte auf die kaufmännische Rundung auf 2 Dezimalstellen."
+              ],
+              "solution": "Schritt 1: Zinsfaktor aufstellen: $q = 1 + i = 1 + 0{,}04 = 1{,}04$.\nSchritt 2: Endkapitalformel anwenden: $K_3 = K_0 \\cdot q^3 = 5000 \\cdot (1{,}04)^3$.\nSchritt 3: Ausmultiplizieren: $5000 \\cdot 1{,}124864 = 5.624{,}32$ €.\nEndergebnis: Das Endkapital nach 3 Jahren beträgt exakt $5.624{,}32$ € (Zinsgewinn: $624{,}32$ €)."
+            }
+          ]
+        },
+        {
+          "id": "p2-renten-annuitaeten",
+          "title": "Rentenrechnung & Annuitätentilgung",
+          "explanation": "Was ist das? Eine Rente ist eine regelmässige, gleich bleibende Zahlung $R$ (z. B. 500 € jeden Monat oder jedes Jahr). Die Annuitätentilgung ist der Standard-Bankkredit: Du zahlst jeden Monat eine feste Rate (Annuität $A$), die aus Zinsanteil und Tilgungsanteil besteht. Mit jeder Rate sinkt die Restschuld, wodurch der Zinsanteil schrumpft und der Tilgungsanteil wächst.\n\nWozu brauche ich das? Baufinanzierung, Autoleasing, Rentenauszahlungspläne und Unternehmensanleihen.\n\nMini-Beispiel: Kredit $S_0 = 10.000$ € zu $i = 5\\%$ ($q=1{,}05$) über $n=2$ Jahre. Die jährliche Annuität ist $A = S_0 \\cdot \\frac{q^n \\cdot (q-1)}{q^n - 1} = 10000 \\cdot \\frac{1{,}05^2 \\cdot 0{,}05}{1{,}05^2 - 1} = 10000 \\cdot 0{,}537805 = 5.378{,}05$ €. Im Jahr 1: Zinsen $500$ €, Tilgung $4.878{,}05$ €; im Jahr 2: Zinsen auf Restschuld, Rest getilgt.",
+          "formulas": [
+            {
+              "label": "Rentenendwert (nachschüssig)",
+              "latex": "R_n = R \\cdot \\frac{q^n - 1}{q - 1}",
+              "note": "Alltag: Wie viel Vermögen hast du angespart, wenn du $n$ Jahre lang jedes Jahr $R$ € einzahlst?"
+            },
+            {
+              "label": "Rentenbarwert (nachschüssig)",
+              "latex": "R_0 = R \\cdot \\frac{q^n - 1}{q^n \\cdot (q - 1)}",
+              "note": "Alltag: Wie viel Geld musst du heute auf einmal anlegen, um $n$ Jahre lang jedes Jahr $R$ € entnehmen zu können?"
+            },
+            {
+              "label": "Annuitätenformel (Kreditrate)",
+              "latex": "A = S_0 \\cdot \\frac{q^n \\cdot (q - 1)}{q^n - 1}",
+              "note": "Alltag: Feste jährliche Kreditrate = Restschuld mal Annuitätenfaktor."
+            }
+          ],
+          "visualizationType": "annuity_plot",
+          "graph": {
+            "title": "Annuitätentilgung: Zins- vs. Tilgungsanteil",
+            "description": "Entwicklung der Annuität über die Laufzeit: sinkender Zinsanteil bei steigender Tilgungsrate."
+          },
+          "questions": [
+            {
+              "id": "q-p2-2",
+              "type": "multiple_choice",
+              "question": "Sie sparen am Ende jedes Jahres \\(R = 2.000\\) € für \\(n = 4\\) Jahre bei einem Zinssatz von \\(i = 5\\%\\) p.a. Wie hoch ist der nachschüssige Rentenendwert \\(R_4\\)?",
+              "options": [
+                "8.620,25 €",
+                "8.000,00 €",
+                "8.400,00 €",
+                "9.050,50 €"
+              ],
+              "correctIndex": 0,
+              "hint": "Nutzen Sie den Rentenendwertfaktor: \\(R_n = R \\cdot \\frac{q^n - 1}{q - 1}\\).",
+              "hints": [
+                "Tipp 1 (Formel aufstellen): Bei $i = 0{,}05$ ist $q = 1{,}05$. Die Formel lautet $R_4 = 2000 \\cdot \\frac{1{,}05^4 - 1}{1{,}05 - 1}$.",
+                "Tipp 2 (Zähler berechnen): Berechne $1{,}05^4 \\approx 1{,}21550625$. Ziehe 1 ab: $0{,}21550625$.",
+                "Tipp 3 (Teilen und multiplizieren): Teile durch den Nenner $q-1 = 0{,}05$: $0{,}21550625 / 0{,}05 = 4{,}310125$. Multipliziere nun mit der Jahresrente $2000$."
+              ],
+              "solution": "Schritt 1: Rentenendwertformel wählen: $R_n = R \\cdot \\frac{q^n - 1}{q - 1}$ mit $R=2000$, $q=1{,}05$, $n=4$.\nSchritt 2: Rentenendwertfaktor ausrechnen: $\\frac{1{,}05^4 - 1}{1{,}05 - 1} = \\frac{1{,}21550625 - 1}{0{,}05} = \\frac{0{,}21550625}{0{,}05} = 4{,}310125$.\nSchritt 3: Mit Jahresrate multiplizieren: $R_4 = 2000 \\cdot 4{,}310125 = 8.620{,}25$ €.\nEndergebnis: Das nach 4 Jahren angesparte Guthaben beträgt $8.620{,}25$ € (eingezahlt: $8.000$ €, Zinsgewinn: $620{,}25$ €)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-3",
+      "title": "Phase 3: Lineare Algebra",
+      "description": "Vektoren, Matrizenmultiplikation, Determinanten, lineare Gleichungssysteme und Gauß-Verfahren.",
+      "topics": [
+        {
+          "id": "p3-matrizen-vektoren",
+          "title": "Matrizenmultiplikation & Vektorrechnung",
+          "explanation": "Was ist das? Ein Vektor ist eine Liste von Zahlen (z. B. Zutaten für 1 Kuchen). Eine Matrix ist eine Tabelle voller Zahlen (z. B. Zutaten für 5 verschiedene Kuchen). Bei der Matrizenmultiplikation $A \\cdot B$ gilt die Grundregel 'Zeile mal Spalte': Du fährst mit dem linken Zeigefinger auf der Zeile nach rechts und mit dem rechten auf der Spalte nach unten, nimmst die Paare mal und zählst alles zusammen.\n\nWozu brauche ich das? Mehrstufige Produktionsprozesse (Rohstoffe $\\to$ Zwischenprodukte $\\to$ Endprodukte), Verflechtungsmatrizen, Input-Output-Modelle nach Leontief und Datenanalysen.\n\nMini-Beispiel: Zeile $(2, 3)$ mal Spalte $\\begin{pmatrix} 4 \\\\ 5 \\end{pmatrix}$. Du rechnest: $2 \\cdot 4 + 3 \\cdot 5 = 8 + 15 = 23$. Matrizenmultiplikation ist nur dieses Prinzip für jedes Feld in der Ergebnistabelle wiederholt.",
+          "formulas": [
+            {
+              "label": "Falksches Schema (Zeile mal Spalte)",
+              "latex": "c_{ij} = \\sum_{k=1}^m a_{ik} \\cdot b_{kj}",
+              "note": "Alltag: Multipliziere Element für Element der Zeile aus Matrix A mit der Spalte aus Matrix B und summiere auf."
+            },
+            {
+              "label": "Dimensionsbedingung",
+              "latex": "(m \\times k) \\cdot (k \\times n) = (m \\times n)",
+              "note": "Alltag: Die Spaltenanzahl der ersten Matrix MUSS exakt mit der Zeilenanzahl der zweiten Matrix übereinstimmen."
+            },
+            {
+              "label": "Determinante einer 2x2 Matrix",
+              "latex": "\\det \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix} = a \\cdot d - b \\cdot c",
+              "note": "Alltag: Hauptdiagonale minus Nebendiagonale. Ist det = 0, gibt es keine eindeutige Lösung."
+            }
+          ],
+          "visualizationType": "matrix_plot",
+          "graph": {
+            "title": "Lineare Transformation und Vektoren",
+            "description": "Geometrische Veranschaulichung der Vektoraddition und Matrix-Multiplikation im 2D-Raum."
+          },
+          "questions": [
+            {
+              "id": "q-p3-1",
+              "type": "multiple_choice",
+              "question": "Berechnen Sie das Matrizenprodukt: \\[ \\begin{pmatrix} 2 & 1 \\\\ 0 & 3 \\end{pmatrix} \\cdot \\begin{pmatrix} 4 & 5 \\\\ 1 & 2 \\end{pmatrix} \\]",
+              "options": [
+                "$\\begin{pmatrix} 9 & 12 \\\\ 3 & 6 \\end{pmatrix}$",
+                "$\\begin{pmatrix} 8 & 5 \\\\ 0 & 6 \\end{pmatrix}$",
+                "$\\begin{pmatrix} 9 & 10 \\\\ 3 & 6 \\end{pmatrix}$",
+                "$\\begin{pmatrix} 10 & 12 \\\\ 1 & 6 \\end{pmatrix}$"
+              ],
+              "correctIndex": 0,
+              "hint": "Wenden Sie 'Zeile mal Spalte' für alle 4 Positionen an: \\(c_{11} = 2\\cdot4 + 1\\cdot1 = 9\\).",
+              "hints": [
+                "Tipp 1 (Erste Zeile berechnen): Oben links: $2 \\cdot 4 + 1 \\cdot 1 = 8 + 1 = 9$. Oben rechts: $2 \\cdot 5 + 1 \\cdot 2 = 10 + 2 = 12$.",
+                "Tipp 2 (Zweite Zeile berechnen): Unten links: $0 \\cdot 4 + 3 \\cdot 1 = 0 + 3 = 3$. Unten rechts: $0 \\cdot 5 + 3 \\cdot 2 = 0 + 6 = 6$.",
+                "Tipp 3 (Zusammenstellen): Setze die 4 berechneten Werte in die Matrix ein: Zeile 1 ist $(9, 12)$, Zeile 2 ist $(3, 6)$."
+              ],
+              "solution": "Schritt 1 - Eintrag (1,1): $2 \\cdot 4 + 1 \\cdot 1 = 8 + 1 = 9$.\nSchritt 2 - Eintrag (1,2): $2 \\cdot 5 + 1 \\cdot 2 = 10 + 2 = 12$.\nSchritt 3 - Einträge (2,1) und (2,2): $0 \\cdot 4 + 3 \\cdot 1 = 3$ und $0 \\cdot 5 + 3 \\cdot 2 = 6$.\nEndergebnis: $\\begin{pmatrix} 9 & 12 \\\\ 3 & 6 \\end{pmatrix}$."
+            }
+          ]
+        },
+        {
+          "id": "p3-lgs-gauss",
+          "title": "Lineare Gleichungssysteme & Gauß-Algorithmus",
+          "explanation": "Was ist das? Ein lineares Gleichungssystem (LGS) sucht Werte für mehrere Unbekannte ($x_1, x_2, x_3$), die alle Gleichungen gleichzeitig erfüllen. Der Gauß-Algorithmus bringt das System schrittweise in eine Stufenform (Dreiecksform), sodass unten eine Gleichung mit nur einer Unbekannten steht, die du direkt auflösen und rückwärts einsetzen kannst.\n\nWozu brauche ich das? Kostenstellenrechnung, innerbetriebliche Leistungsverrechnung (Gleichungsverfahren), Produktionsplanung und Marktgleichgewichte mit mehreren Gütern.\n\nMini-Beispiel: $\\begin{cases} x + y = 10 \\\\ 2x + 4y = 28 \\end{cases}$. Multipliziere Zeile 1 mit 2 ($2x + 2y = 20$) und ziehe sie von Zeile 2 ab: $2y = 8 \\implies y = 4$. Setze $y=4$ in Zeile 1 ein: $x + 4 = 10 \\implies x = 6$. Lösung: $(x, y) = (6, 4)$.",
+          "formulas": [
+            {
+              "label": "Matrix-Vektor-Form eines LGS",
+              "latex": "A \\cdot \\vec{x} = \\vec{b}",
+              "note": "Alltag: Koeffizientenmatrix $A$ mal Unbekanntenvektor $x$ ergibt Ergebnisvektor $b$."
+            },
+            {
+              "label": "Zulässige Zeilenoperationen",
+              "latex": "Z_i \\to Z_i - c \\cdot Z_j \\quad (c \\in \\mathbb{R})",
+              "note": "Alltag: Zeilen vertauschen, mit einer Zahl malnehmen oder Vielfache voneinander abziehen."
+            },
+            {
+              "label": "Rückwärtseinsetzen (Stufenform)",
+              "latex": "x_n = \\frac{b_n}{a_{nn}}",
+              "note": "Alltag: Von unten nach oben: Letzte Variable sofort ausrechnen, dann schrittweise nach oben einsetzen."
+            }
+          ],
+          "visualizationType": "linear_system_plot",
+          "graph": {
+            "title": "Schnittpunkt zweier Geraden (LGS)",
+            "description": "Grafische Veranschaulichung des LGS als Schnittpunkt zweier Geraden im Punkt $(6, 4)$."
+          },
+          "questions": [
+            {
+              "id": "q-p3-2",
+              "type": "multiple_choice",
+              "question": "Lösen Sie das lineare Gleichungssystem: \\[ \\begin{aligned} x + y &= 10 \\\\ 2x + 4y &= 28 \\end{aligned} \\]",
+              "options": [
+                "$x = 6, \\; y = 4$",
+                "$x = 5, \\; y = 5$",
+                "$x = 4, \\; y = 6$",
+                "$x = 7, \\; y = 3$"
+              ],
+              "correctIndex": 0,
+              "hint": "Ziehen Sie das 2-fache der 1. Gleichung von der 2. Gleichung ab: \\(2y = 8\\).",
+              "hints": [
+                "Tipp 1 (Eliminieren): Multipliziere Gleichung 1 mit 2: $2x + 2y = 20$.",
+                "Tipp 2 (Differenz bilden): Subtrahiere $(2x + 2y = 20)$ von Gleichung 2 $(2x + 4y = 28)$: $(2x - 2x) + (4y - 2y) = 28 - 20 \\implies 2y = 8$.",
+                "Tipp 3 (Rückwärtseinsetzen): Aus $2y = 8$ folgt $y = 4$. Setze $y = 4$ in $x + y = 10$ ein: $x + 4 = 10 \\implies x = 6$."
+              ],
+              "solution": "Schritt 1 - Elimination vorbereiten: Multipliziere Gleichung (I) mit 2: $2x + 2y = 20$.\nSchritt 2 - Subtraktion (II) - 2*(I): $(2x+4y) - (2x+2y) = 28 - 20 \\implies 2y = 8 \\implies y = 4$.\nSchritt 3 - Einsetzen: Setze $y = 4$ in (I) ein: $x + 4 = 10 \\implies x = 6$.\nEndergebnis: Der Lösungsvektor ist $(x, y) = (6, 4)$. Probe: $2 \\cdot 6 + 4 \\cdot 4 = 12 + 16 = 28$ stimmt."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-4",
+      "title": "Phase 4: Deskriptive Statistik",
+      "description": "Häufigkeitsverteilungen, Lage- und Streuungsmaße, Korrelation und lineare Regression.",
+      "topics": [
+        {
+          "id": "p4-lage-streuung",
+          "title": "Lage- und Streuungsmaße (Mittelwert, Median, Varianz)",
+          "explanation": "Was ist das? Lagemaße sagen dir, wo das 'Zentrum' deiner Daten liegt: Das arithmetische Mittel $\\bar{x}$ ist der gewöhnliche Durchschnitt, der Median $ilde{x}$ ist der exakte Mittelwert der sortierten Liste (robust gegen extreme Ausreißer). Streumaße sagen dir, wie weit die Daten streuen: Die Varianz $s^2$ und die Standardabweichung $s = \\sqrt{s^2}$ messen den durchschnittlichen Abstand der Werte vom Mittelwert.\n\nWozu brauche ich das? Gehaltsanalysen (warum das Mediangehalt ehrlicher ist als das Durchschnittsgehalt), Qualitätskontrolle in der Produktion und Risikobewertung von Aktien (Volatilität = Standardabweichung).\n\nMini-Beispiel: Gehälter: 2.000 €, 3.000 €, 10.000 €. Mittelwert $\\bar{x} = (2000+3000+10000)/3 = 5.000$ € (durch den Chef verzerrt!). Median $ilde{x} = 3.000$ € (spiegelt die Mehrheit wider). Abweichungen zum Quadrat ergeben die Varianz $s^2 = \\frac{1}{2}[(2000-5000)^2 + (3000-5000)^2 + (10000-5000)^2] = 19.000.000$.",
+          "formulas": [
+            {
+              "label": "Arithmetischer Mittelwert",
+              "latex": "\\bar{x} = \\frac{1}{n} \\sum_{i=1}^n x_i",
+              "note": "Alltag: Alle Werte zusammenzählen und durch die Anzahl teilen."
+            },
+            {
+              "label": "Empirische Varianz (Stichprobe)",
+              "latex": "s^2 = \\frac{1}{n-1} \\sum_{i=1}^n (x_i - \\bar{x})^2",
+              "note": "Alltag: Wie weit weichen die Werte im Schnitt vom Mittelwert ab? (Quadriert, damit sich Plus und Minus nicht aufheben)."
+            },
+            {
+              "label": "Standardabweichung",
+              "latex": "s = \\sqrt{s^2}",
+              "note": "Alltag: Wurzel aus der Varianz – hat wieder die vertraute Original-Einheit (z. B. Euro oder kg)."
+            }
+          ],
+          "visualizationType": "distribution_plot",
+          "graph": {
+            "title": "Mittelwert, Median und Streuungsbreite",
+            "description": "Verteilungsgraph mit Markierung von Mittelwert, Median und $\\pm 1 s$ Standardabweichungs-Intervall."
+          },
+          "questions": [
+            {
+              "id": "q-p4-1",
+              "type": "multiple_choice",
+              "question": "Gegeben ist die Stichprobe \\(x = \\{2, 4, 4, 4, 5, 5, 7, 9\\}\\). Wie lauten das arithmetische Mittel \\(\\bar{x}\\) und der Median \\(\\tilde{x}\\)?",
+              "options": [
+                "Mittelwert = 5,0; Median = 4,5",
+                "Mittelwert = 5,0; Median = 5,0",
+                "Mittelwert = 4,5; Median = 4,0",
+                "Mittelwert = 5,5; Median = 4,5"
+              ],
+              "correctIndex": 0,
+              "hint": "Summieren Sie alle 8 Werte für \\(\\bar{x}\\). Bei geradem \\(n=8\\) ist der Median der Durchschnitt der 4. und 5. Stelle.",
+              "hints": [
+                "Tipp 1 (Summe & Mittelwert): Summe $= 2 + 4 + 4 + 4 + 5 + 5 + 7 + 9 = 40$. Teile $40 / 8 = 5{,}0$.",
+                "Tipp 2 (Median-Position): Bei $n = 8$ Werten liegt die Mitte zwischen der 4. Stelle (Wert: 4) und der 5. Stelle (Wert: 5).",
+                "Tipp 3 (Median berechnen): Bilde den Mittelwert der beiden mittleren Werte: $(4 + 5) / 2 = 4{,}5$."
+              ],
+              "solution": "Schritt 1 - Mittelwert berechnen: $\\bar{x} = \\frac{2+4+4+4+5+5+7+9}{8} = \\frac{40}{8} = 5{,}0$.\nSchritt 2 - Median bestimmen: Da $n=8$ gerade ist, nehmen wir das arithmetische Mittel aus dem 4. Wert ($x_{(4)}=4$) und 5. Wert ($x_{(5)}=5$).\nSchritt 3 - Median ausrechnen: $\\tilde{x} = \\frac{4 + 5}{2} = 4{,}5$.\nEndergebnis: Mittelwert $\\bar{x} = 5{,}0$ und Median $\\tilde{x} = 4{,}5$."
+            }
+          ]
+        },
+        {
+          "id": "p4-korrelation-regression",
+          "title": "Lineare Regression & Bravais-Pearson Korrelation",
+          "explanation": "Was ist das? Die Korrelation $r$ misst die Stärke und Richtung eines linearen Zusammenhangs zwischen zwei Merkmalen ($r = +1$: je mehr desto mehr; $r = -1$: je mehr desto weniger; $r = 0$: kein linearer Zusammenhang). Die lineare Regression legt die beste Ausgleichsgerade $\\hat{y} = a + b \\cdot x$ (Methode der kleinsten Quadrate) durch eine Punktwolke.\n\nWozu brauche ich das? Marketing und Vertrieb: Wie viele Verkäufe bringt jeder zusätzlich investierte Werbe-Euro? Preis-Absatz-Modellierung und Trendprognosen.\n\nMini-Beispiel: Werbeausgaben $x$ in Tsd. € und Umsatz $y$ in Tsd. €: $(1, 3), (2, 5), (3, 7)$. Die Punkte liegen perfekt auf einer Geraden: Steigung $b = 2$ (jeder Werbe-Tausender bringt 2 Tausend Umsatz), Achsenabschnitt $a = 1$ (Grundumsatz ohne Werbung). Formel: $\\hat{y} = 1 + 2x$ mit Korrelation $r = +1{,}0$.",
+          "formulas": [
+            {
+              "label": "Korrelationskoeffizient nach Bravais-Pearson",
+              "latex": "r_{xy} = \\frac{s_{xy}}{s_x \\cdot s_y} = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{\\sqrt{\\sum (x_i - \\bar{x})^2 \\cdot \\sum (y_i - \\bar{y})^2}}",
+              "note": "Alltag: Zahl zwischen -1 und +1. Gibt an, wie eng die Punkte an einer perfekten Geraden kleben."
+            },
+            {
+              "label": "Regressionsgerade (Steigung b)",
+              "latex": "b = \\frac{s_{xy}}{s_x^2} = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum (x_i - \\bar{x})^2}",
+              "note": "Alltag: Steigung der Trendlinie: Um wie viele Einheiten ändert sich $y$, wenn $x$ um 1 Einheit steigt?"
+            },
+            {
+              "label": "Achsenabschnitt a",
+              "latex": "a = \\bar{y} - b \\cdot \\bar{x}",
+              "note": "Alltag: Startwert von $y$ bei $x = 0$. Garantiert, dass die Gerade exakt durch den Schwerpunkt $(\\bar{x}, \\bar{y})$ geht."
+            }
+          ],
+          "visualizationType": "scatter_regression_plot",
+          "graph": {
+            "title": "Streudiagramm mit Regressionsgerade",
+            "description": "Punktwolke mit eingezeichneter linearer OLS-Regressionsgerade $\\hat{y} = a + bx$ und Residuenabständen."
+          },
+          "questions": [
+            {
+              "id": "q-p4-2",
+              "type": "multiple_choice",
+              "question": "Für zwei Merkmale \\(X\\) (Werbung) und \\(Y\\) (Umsatz) gilt: \\(\\bar{x} = 4\\), \\(\\bar{y} = 10\\), Kovarianz \\(s_{xy} = 6\\) und Varianz \\(s_x^2 = 3\\). Wie lautet die Regressionsgerade \\(\\hat{y} = a + bx\\)?",
+              "options": [
+                "$\\hat{y} = 2 + 2x$",
+                "$\\hat{y} = 1 + 2x$",
+                "$\\hat{y} = 4 + 1{,}5x$",
+                "$\\hat{y} = 2 + 3x$"
+              ],
+              "correctIndex": 0,
+              "hint": "Berechnen Sie zuerst \\(b = s_{xy} / s_x^2\\) und dann \\(a = \\bar{y} - b \\cdot \\bar{x}\\).",
+              "hints": [
+                "Tipp 1 (Steigung b bestimmen): $b = \\frac{s_{xy}}{s_x^2} = \\frac{6}{3} = 2$.",
+                "Tipp 2 (Achsenabschnitt a berechnen): Setze $\\bar{y}=10$, $b=2$, $\\bar{x}=4$ in $a = \\bar{y} - b \\cdot \\bar{x}$ ein: $a = 10 - (2 \\cdot 4)$.",
+                "Tipp 3 (Geradengleichung aufstellen): $a = 10 - 8 = 2$. Setze $a$ und $b$ in $\\hat{y} = a + bx$ ein: $\\hat{y} = 2 + 2x$."
+              ],
+              "solution": "Schritt 1 - Steigung $b$ berechnen: $b = \\frac{s_{xy}}{s_x^2} = \\frac{6}{3} = 2$.\nSchritt 2 - Achsenabschnitt $a$ berechnen: $a = \\bar{y} - b \\cdot \\bar{x} = 10 - (2 \\cdot 4) = 10 - 8 = 2$.\nSchritt 3 - Regressionsgleichung formulieren: $\\hat{y} = 2 + 2x$.\nEndergebnis: Die Regressionsgerade lautet $\\hat{y} = 2 + 2x$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-5",
+      "title": "Phase 5: Wahrscheinlichkeitsrechnung & Kombinatorik",
+      "description": "Kombinatorik, Laplace-Wahrscheinlichkeit, bedingte Wahrscheinlichkeit, Satz von Bayes und Zufallsvariablen.",
+      "topics": [
+        {
+          "id": "p5-kombinatorik-grundlagen",
+          "title": "Kombinatorik & Laplace-Wahrscheinlichkeit",
+          "explanation": "Was ist das? Kombinatorik beantwortet die Frage: Wie viele verschiedene Möglichkeiten gibt es, Dinge anzuordnen oder auszuwählen? Bei Laplace-Experimenten (wo alle Ergebnisse gleich wahrscheinlich sind, wie beim fairen Würfel) gilt die Formel: Wahrscheinlichkeit = Günstige Fälle geteilt durch Mögliche Fälle ($P(A) = \\frac{|A|}{|\\Omega|}$).\n\nWozu brauche ich das? Passwort-Sicherheit (wie viele Kombinationen gibt es?), Qualitätsprüfungen (Stichprobe ohne Zurücklegen), Lotterien und Risikoberechnungen.\n\nMini-Beispiel: Wie viele Möglichkeiten gibt es, 2 Gewinner aus einer Gruppe von 5 Personen auszuwählen (ohne Reihenfolge)? Binomialkoeffizient: $\\binom{5}{2} = \\frac{5 \\cdot 4}{2 \\cdot 1} = 10$ Möglichkeiten. Die Wahrscheinlichkeit, dass genau du und dein Freund gezogen werden, beträgt $1/10 = 10\\%$.",
+          "formulas": [
+            {
+              "label": "Binomialkoeffizient (Kombination ohne Zurücklegen)",
+              "latex": "\\binom{n}{k} = \\frac{n!}{k! \\cdot (n-k)!}",
+              "note": "Alltag: 'n über k': Auswahl von $k$ Elementen aus $n$ ohne Beachtung der Reihenfolge (z. B. Lotto '6 aus 49')."
+            },
+            {
+              "label": "Laplace-Wahrscheinlichkeit",
+              "latex": "P(A) = \\frac{|A|}{|\\Omega|} = \\frac{\\text{Anzahl günstige Fälle}}{\\text{Anzahl mögliche Fälle}}",
+              "note": "Alltag: Treffer durch Gesamtzahl der gleich wahrscheinlichen Ausgänge."
+            },
+            {
+              "label": "Gegenwahrscheinlichkeit",
+              "latex": "P(\\bar{A}) = 1 - P(A)",
+              "note": "Alltag: Mindestens-1-Aufgaben: Berechne die Wahrscheinlichkeit für 'gar kein Treffer' und ziehe sie von 1 ab."
+            }
+          ],
+          "visualizationType": "combinatorics_tree_plot",
+          "graph": {
+            "title": "Baumdiagramm und Pfadregeln",
+            "description": "Visualisierung eines mehrstufigen Zufallsexperiments mit Pfadmultiplikations- und Pfadadditionsregel."
+          },
+          "questions": [
+            {
+              "id": "q-p5-1",
+              "type": "multiple_choice",
+              "question": "In einer Urne liegen 6 rote und 4 blaue Kugeln (insgesamt 10). Es werden 2 Kugeln ohne Zurücklegen gezogen. Wie hoch ist die Wahrscheinlichkeit, dass beide Kugeln rot sind?",
+              "options": [
+                "1/3 (ca. 33,3%)",
+                "1/2 (50%)",
+                "9/25 (36%)",
+                "4/15 (ca. 26,7%)"
+              ],
+              "correctIndex": 0,
+              "hint": "Multiplizieren Sie die Pfadwahrscheinlichkeiten: \\(P(R_1) \\cdot P(R_2|R_1) = \\frac{6}{10} \\cdot \\frac{5}{9}\\).",
+              "hints": [
+                "Tipp 1 (Erster Zug): Beim ersten Zug sind 6 von 10 Kugeln rot: $P(R_1) = \\frac{6}{10}$.",
+                "Tipp 2 (Zweiter Zug): Da nicht zurückgelegt wird, sind noch 9 Kugeln in der Urne, davon 5 rote: $P(R_2|R_1) = \\frac{5}{9}$.",
+                "Tipp 3 (Multiplizieren & Kürzen): Pfadregel: $\\frac{6}{10} \\cdot \\frac{5}{9} = \\frac{30}{90}$. Kürze durch 30."
+              ],
+              "solution": "Schritt 1 - Erster Zug: Die Wahrscheinlichkeit für eine rote Kugel beträgt $P(R_1) = \\frac{6}{10} = \\frac{3}{5}$.\nSchritt 2 - Zweiter Zug (bedingt): Nach dem Ziehen einer roten Kugel verbleiben 5 rote von 9 Kugeln: $P(R_2|R_1) = \\frac{5}{9}$.\nSchritt 3 - Gesamtwahrscheinlichkeit: $P(R_1 \\cap R_2) = \\frac{6}{10} \\cdot \\frac{5}{9} = \\frac{30}{90} = \\frac{1}{3} \\approx 33{,}33\\%$.\nEndergebnis: Die Wahrscheinlichkeit beträgt $1/3$ (ca. $33{,}3\\%$)."
+            }
+          ]
+        },
+        {
+          "id": "p5-diskrete-stetige-verteilungen",
+          "title": "Diskrete & Stetige Verteilungen (Binomial & Normal)",
+          "explanation": "Was ist das? Die Binomialverteilung $B(n, p)$ modelliert $n$-fache Ja/Nein-Versuche mit konstanter Erfolgswahrscheinlichkeit $p$ (z. B. Anzahl defekter Bauteile). Die Normalverteilung (Gaußsche Glockenkurve $N(\\mu, \\sigma^2)$) modelliert stetige Messgrößen aus der echten Welt (Körpergröße, Abfüllmenge, Renditen), bei denen sich viele kleine Zufallseinflüsse überlagern.\n\nWozu brauche ich das? Six-Sigma-Qualitätsmanagement, Fehlertoleranzen bei Verpackungen, Value-at-Risk-Berechnungen bei Banken und statistische Signifikanzprüfungen.\n\nMini-Beispiel: Bei einer Maschine sind $10\\%$ aller Teile Ausschuss ($p = 0{,}1$). Bei einer Stichprobe von $n = 5$ Teilen ist die Wahrscheinlichkeit für genau 0 Defekte: $P(X=0) = \\binom{5}{0} \\cdot 0{,}1^0 \\cdot 0{,}9^5 = 1 \\cdot 1 \\cdot 0{,}59049 \\approx 59\\%$.",
+          "formulas": [
+            {
+              "label": "Binomialverteilung (Bernoulli-Formel)",
+              "latex": "P(X = k) = \\binom{n}{k} \\cdot p^k \\cdot (1-p)^{n-k}",
+              "note": "Alltag: Wahrscheinlichkeit für genau $k$ Erfolge bei $n$ Versuchen."
+            },
+            {
+              "label": "Z-Standardisierung (Normalverteilung)",
+              "latex": "z = \\frac{x - \\mu}{\\sigma}",
+              "note": "Alltag: Übersetzt jeden x-Wert in die Standardnormalverteilung $N(0, 1)$ (Tabelle ablesen)."
+            },
+            {
+              "label": "Erwartungswert & Varianz bei Binomialverteilung",
+              "latex": "\\mu = n \\cdot p, \\quad \\sigma^2 = n \\cdot p \\cdot (1-p)",
+              "note": "Alltag: Durchschnittliche Trefferanzahl und deren Streuung."
+            }
+          ],
+          "visualizationType": "normal_distribution_plot",
+          "graph": {
+            "title": "Gaußsche Normalverteilung (Glockenkurve)",
+            "description": "Dichtefunktion der Standardnormalverteilung mit 68,3% ($\\pm 1\\sigma$) und 95,4% ($\\pm 2\\sigma$) Intervallen."
+          },
+          "questions": [
+            {
+              "id": "q-p5-2",
+              "type": "multiple_choice",
+              "question": "Eine Zufallsvariable \\(X\\) ist normalverteilt mit Mittelwert \\(\\mu = 100\\) und Standardabweichung \\(\\sigma = 10\\). Welcher \\(z\\)-Wert gehört zum Messwert \\(x = 115\\)?",
+              "options": [
+                "$z = 1{,}5$",
+                "$z = 1{,}15$",
+                "$z = 2{,}0$",
+                "$z = 0{,}15$"
+              ],
+              "correctIndex": 0,
+              "hint": "Nutzen Sie die Standardisierungsformel \\(z = \\frac{x - \\mu}{\\sigma}\\).",
+              "hints": [
+                "Tipp 1 (Werte ablesen): Gegeben sind $x = 115$, $\\mu = 100$ und $\\sigma = 10$.",
+                "Tipp 2 (Differenz im Zähler): Berechne den Abstand zum Mittelwert: $x - \\mu = 115 - 100 = 15$.",
+                "Tipp 3 (Durch Streuung teilen): Teile den Abstand durch $\\sigma = 10$: $z = 15 / 10 = 1{,}5$."
+              ],
+              "solution": "Schritt 1 - Werte identifizieren: $x = 115$, $\\mu = 100$, $\\sigma = 10$.\nSchritt 2 - Standardisierungsformel anwenden: $z = \\frac{x - \\mu}{\\sigma} = \\frac{115 - 100}{10}$.\nSchritt 3 - Ausrechnen: $z = \\frac{15}{10} = 1{,}5$.\nEndergebnis: Der standardisierte $z$-Wert beträgt $1{,}5$ (der Wert liegt 1,5 Standardabweichungen über dem Mittelwert)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-6",
+      "title": "Phase 6: Induktive Statistik & Hypothesentests",
+      "description": "Punktschätzung, Konfidenzintervalle, Signifikanztests (z-Test, t-Test) und Fehler 1. & 2. Art.",
+      "topics": [
+        {
+          "id": "p6-hypothesentests",
+          "title": "Hypothesentests & Konfidenzintervalle",
+          "explanation": "Was ist das? Ein Hypothesentest entscheidet datenbasiert vor Gericht: Die Nullhypothese $H_0$ ist die 'Unschuldsvermutung' (der alte Zustand, kein Effekt). Die Alternativhypothese $H_1$ behauptet das Gegenteil. Liegt der Messwert im extremen Ablehnungsbereich (p-Wert kleiner als das Signifikanzniveau $\\alpha$, z. B. $5\\%$), wird $H_0$ verworfen. Ein Konfidenzintervall gibt den Bereich an, in dem der wahre Parameter mit z. B. $95\\%$ Sicherheit liegt.\n\nWozu brauche ich das? A/B-Testing im Online-Marketing (Bringt der neue Button wirklich mehr Klicks oder war es nur Zufall?), medizinische Wirksamkeitsstudien und Qualitätsaudits.\n\nMini-Beispiel: Eine Kaffeemaschine soll 200 ml einschenken ($H_0: \\mu = 200$). Eine Stichprobe von $n=36$ Tassen liefert $\\bar{x} = 197$ ml mit $\\sigma = 6$ ml. Prüfgröße: $z = \\frac{197 - 200}{6 / \\sqrt{36}} = \\frac{-3}{1} = -3{,}0$. Da $|-3{,}0| > 1{,}96$ (kritischer Wert bei $\\alpha = 5\\%$), wird $H_0$ verworfen: Die Maschine füllt signifikant zu wenig ein!",
+          "formulas": [
+            {
+              "label": "Prüfgröße beim Gauß-Test (z-Test)",
+              "latex": "z = \\frac{\\bar{x} - \\mu_0}{\\frac{\\sigma}{\\sqrt{n}}}",
+              "note": "Alltag: Wie viele Standardfehler weicht unser Stichprobenergebnis vom Null-Wert $\\mu_0$ ab?"
+            },
+            {
+              "label": "Konfidenzintervall für den Mittelwert (95%)",
+              "latex": "\\left[ \\bar{x} - z_{1-\\alpha/2} \\cdot \\frac{\\sigma}{\\sqrt{n}} \\, ; \\, \\bar{x} + z_{1-\\alpha/2} \\cdot \\frac{\\sigma}{\\sqrt{n}} \\right]",
+              "note": "Alltag: Sicherheitsbereich: Mit 95% Wahrscheinlichkeit liegt der wahre Mittelwert in diesem Intervall (bei 95%: $z = 1{,}96$)."
+            },
+            {
+              "label": "Fehler 1. Art (Alpha-Fehler)",
+              "latex": "\\alpha = P(\\text{Entscheidung für } H_1 \\mid H_0 \\text{ ist wahr})",
+              "note": "Alltag: Blinder Alarm: Wir behaupten fälschlicherweise einen Effekt, obwohl gar keiner da ist."
+            }
+          ],
+          "visualizationType": "hypothesis_test_plot",
+          "graph": {
+            "title": "Hypothesentest: Annahme- und Ablehnungsbereich",
+            "description": "Normalverteilte Teststatistik mit kritischen Schranken $\\pm 1{,}96$ bei Signifikanzniveau $\\alpha = 5\\%$."
+          },
+          "questions": [
+            {
+              "id": "q-p6-1",
+              "type": "multiple_choice",
+              "question": "Ein Hersteller prüft \\(H_0: \\mu = 50\\) gegen \\(H_1: \\mu \\neq 50\\) bei \\(\\alpha = 0{,}05\\) (kritische Grenzen \\(\\pm 1{,}96\\)). Eine Stichprobe von \\(n = 64\\) mit \\(\\sigma = 8\\) liefert \\(\\bar{x} = 52{,}5\\). Wie lautet die Prüfgröße \\(z\\) und wie lautet die Testentscheidung?",
+              "options": [
+                "$z = 2{,}5$; $H_0$ ablehnen",
+                "$z = 2{,}5$; $H_0$ beibehalten",
+                "$z = 1{,}25$; $H_0$ beibehalten",
+                "$z = 3{,}125$; $H_0$ ablehnen"
+              ],
+              "correctIndex": 0,
+              "hint": "Berechnen Sie den Standardfehler \\(\\sigma_{\\bar{x}} = \\frac{\\sigma}{\\sqrt{n}} = \\frac{8}{8} = 1\\) und die Prüfgröße \\(z = \\frac{52{,}5 - 50}{1}\\).",
+              "hints": [
+                "Tipp 1 (Standardfehler berechnen): $\\sigma_{\\bar{x}} = \\frac{\\sigma}{\\sqrt{n}} = \\frac{8}{\\sqrt{64}} = \\frac{8}{8} = 1{,}0$.",
+                "Tipp 2 (Prüfgröße z bestimmen): $z = \\frac{\\bar{x} - \\mu_0}{\\sigma_{\\bar{x}}} = \\frac{52{,}5 - 50}{1{,}0} = 2{,}5$.",
+                "Tipp 3 (Entscheidung treffen): Vergleiche $|z| = 2{,}5$ mit dem kritischen Wert $1{,}96$. Da $2{,}5 > 1{,}96$, liegt der Wert im Ablehnungsbereich."
+              ],
+              "solution": "Schritt 1 - Standardfehler des Mittelwerts berechnen: $\\sigma_{\\bar{x}} = \\frac{\\sigma}{\\sqrt{n}} = \\frac{8}{\\sqrt{64}} = \\frac{8}{8} = 1{,}0$.\nSchritt 2 - Prüfgröße berechnen: $z = \\frac{\\bar{x} - \\mu_0}{\\sigma_{\\bar{x}}} = \\frac{52{,}5 - 50}{1{,}0} = 2{,}5$.\nSchritt 3 - Testentscheidung: Da $|z| = 2{,}5 > 1{,}96$ (kritischer Wert für zweiseitigen Test bei $\\alpha = 0{,}05$), liegt die Prüfgröße im Ablehnungsbereich.\nEndergebnis: $z = 2{,}5$. Die Nullhypothese $H_0$ wird abgelehnt; der Mittelwert weicht statistisch signifikant von 50 ab."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
