@@ -141,3 +141,4 @@ Diese App schließt die Lücke zwischen abstrakter Hochschulmathematik und praxi
 
 Dieses Projekt ist für Studien- und Lehrzwecke konzipiert. Frei nutzbar zur Klausurvorbereitung.
 Erstellt von [@gladiii92](https://github.com/gladiii92).
+
